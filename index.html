@@ -1,337 +1,553 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Understanding Borderline Personality Disorder (BPD) | Free Guides</title>
-  <meta name="description" content="Research-informed guides to borderline personality disorder (BPD), including symptoms, DBT skills, treatment options, and support for loved ones.">
-  <!-- TEMPORARY: noindex while guides and citations are unverified. Flip to "index,follow" before launch. -->
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="theme-color" content="#fbf7f1">
-  <meta property="og:title" content="Understanding Borderline Personality Disorder (BPD) | Free Guides">
-  <meta property="og:description" content="Three free research-informed BPD guides for individuals, families, and loved ones.">
-  <meta property="og:type" content="website">
-  <style>
-    :root{
-      --paper:#fbf7f1;
-      --paper2:#fffdf9;
-      --ink:#2e2927;
-      --muted:#605853;
-      --plum:#5b394b;
-      --plum-dark:#452a38;
-      --sage:#475a47;
-      --sage-dark:#354534;
-      --sage-soft:#edf2e9;
-      --blush:#f5e7e9;
-      --sand:#f4ebdd;
-      --line:#ddd2c8;
-      --shadow:0 16px 42px rgba(65,50,44,.09);
-      --wrap:1080px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
-    img{display:block;max-width:100%}
-    a{color:inherit}
-    button,input{font:inherit}
-    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--ink);margin:0;letter-spacing:-.025em}
-    h1{font-size:clamp(2.55rem,6vw,4.45rem);line-height:1.03;max-width:13ch}
-    h2{font-size:clamp(1.95rem,4vw,2.9rem);line-height:1.08}
-    h3{font-size:clamp(1.14rem,2vw,1.35rem);line-height:1.22}
-    p{margin:0 0 1rem}
-    .wrap{width:min(var(--wrap),calc(100% - 40px));margin-inline:auto}
-    .skip{position:absolute;left:-9999px;top:10px;background:#fff;color:#111;padding:10px 16px;border-radius:999px;z-index:100}
-    .skip:focus{left:12px}
-    nav{position:sticky;top:0;z-index:20;background:rgba(251,247,241,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
-    .nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{font-family:Georgia,"Times New Roman",serif;font-weight:700;text-decoration:none;font-size:1.03rem}
-    .nav-links{display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0}
-    .nav-links a:not(.button){text-decoration:none;color:#514a46;font-weight:700;font-size:.9rem}
-    .nav-links a:not(.button):hover{text-decoration:underline;text-underline-offset:4px}
-    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 23px;border:0;border-radius:999px;background:var(--plum);color:#fff;text-decoration:none;font-weight:800;cursor:pointer;box-shadow:0 8px 20px rgba(91,57,75,.16);transition:background .15s ease,transform .15s ease}
-    .button:hover{background:var(--plum-dark);transform:translateY(-1px)}
-    .button.sage{background:var(--sage);color:#fff}
-    .button.sage:hover{background:var(--sage-dark)}
-    .button.small{min-height:41px;padding:8px 17px;font-size:.86rem}
-    .button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #9b5b79;outline-offset:3px}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding BPD &mdash; A Guide for Families</title>
+<meta name="description" content="Three free research-informed guides to borderline personality disorder for families, friends, and anyone trying to make sense of a diagnosis.">
+<!-- TEMPORARY: noindex while the PDFs are missing and citations are unverified. Flip to "index,follow" before launch. -->
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#efece0">
+<meta property="og:title" content="Understanding BPD &mdash; A Guide for Families">
+<meta property="og:description" content="Three free research-informed guides to borderline personality disorder.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #efece0;
+    --bg-alt: #e5e2d1;
+    --card: #faf8ef;
+    --ink: #2b2a20;
+    --ink-soft: #57543f;
+    --sage: #57654a;
+    --sage-deep: #3c4735;
+    --rose: #c48b81;
+    --gold: #c39a5e;
+    --line: rgba(43,42,32,0.14);
+    --radius: 14px;
+    --wrap: 1080px;
+  }
 
-    .hero{padding:66px 0 58px;background:linear-gradient(180deg,#fbf7f1 0%,#fffaf5 100%)}
-    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center}
-    .hero-copy>p{max-width:630px;font-size:1.08rem;color:var(--muted);margin:22px 0 24px}
-    .cta-row{margin:0 0 6px}
-    .form-note{font-size:.82rem;color:var(--muted);margin:10px 2px 0}
-    .photo-wrap{position:relative;max-width:410px;margin-inline:auto}
-    .photo-wrap:before{content:"";position:absolute;inset:-18px 28px 24px -18px;background:var(--blush);border-radius:44% 56% 48% 52%/50% 42% 58% 50%;z-index:0}
-    .photo-wrap:after{content:"";position:absolute;width:118px;height:118px;border-radius:50%;background:var(--sage-soft);right:-18px;bottom:24px;z-index:0}
-    .hero-photo{position:relative;z-index:1;border-radius:42% 58% 48% 52%/36% 40% 60% 64%;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:2/3;background:#eee3d9}
-    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
 
-    section{padding:66px 0}
-    .soft{background:#fffaf5;border-block:1px solid var(--line)}
-    .section-head{max-width:790px;margin-bottom:30px}
-    .section-head p{color:var(--muted);margin-top:13px;font-size:1.02rem}
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Karla', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .problem{border:1px solid var(--line);border-radius:30px;padding:27px 24px 26px;background:var(--paper2)}
-    .problem:nth-child(1){background:var(--blush)}
-    .problem:nth-child(2){background:var(--sage-soft)}
-    .problem:nth-child(3){background:var(--sand)}
-    .icon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#fff8f7;color:var(--plum);margin-bottom:18px;border:1px solid rgba(91,57,75,.12)}
-    .problem:nth-child(2) .icon{background:#f8fbf5;color:var(--sage-dark)}
-    .problem:nth-child(3) .icon{background:#fffaf1;color:#6b512f}
-    .icon svg{width:24px;height:24px;stroke:currentColor}
-    .problem-stat{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,2.8rem);line-height:1;font-weight:700;color:var(--plum);letter-spacing:-.04em;margin-bottom:10px}
-    .problem:nth-child(2) .problem-stat{color:var(--sage-dark)}
-    .problem:nth-child(3) .problem-stat{color:#6b512f}
-    .problem p{color:#4f4945;font-size:.94rem;margin:.68rem 0 0}
-    .problem .subdata{margin-top:14px;padding-top:14px;border-top:1px solid rgba(46,41,39,.14);font-size:.88rem}
-    .note-num{font-size:.77em;vertical-align:super;font-weight:800;color:var(--plum);text-decoration:none;margin-left:2px}
-    .note-num:hover{text-decoration:underline}
-    .problem:nth-child(2) .note-num{color:var(--sage-dark)}
-    .research-note{margin-top:22px;max-width:900px;color:var(--muted);border-left:4px solid var(--plum);padding-left:18px}
+  h1, h2, h3{
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    line-height: 1.12;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
 
-    .narrow{max-width:790px}
-    .narrow p{color:var(--muted)}
-    .narrow p:first-of-type{margin-top:15px}
-    .treatment{background:var(--sage);color:#fff}
-    .treatment h2,.treatment h3{color:#fff}
-    .treatment p{color:#f6f8f3}
-    .treatment .note-num{color:#fff;text-decoration:underline;text-underline-offset:2px}
-    .treatment-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:22px;align-items:start}
-    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .skill{border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10);border-radius:26px;padding:20px}
-    .skill p{font-size:.91rem;margin:.5rem 0 0}
-    .treatment-card{border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.12);border-radius:30px;padding:26px}
-    .treatment-card .big{font-family:Georgia,"Times New Roman",serif;font-size:2.55rem;line-height:1;font-weight:700;color:#fff;margin-bottom:13px}
+  p{ margin: 0 0 1em; }
+  a{ color: inherit; }
+  img{ max-width: 100%; }
 
-    .about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:center}
-    .about-photo{border-radius:34px;overflow:hidden;aspect-ratio:4/5;background:#eee3d9;box-shadow:var(--shadow)}
-    .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 43%}
-    .about-copy p{color:var(--muted);max-width:700px}
-    .about-copy p:first-of-type{font-size:1.08rem;color:var(--ink);margin-top:16px}
+  .wrap{
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
 
-    .guides{display:grid;gap:16px}
-    .guide{display:grid;grid-template-columns:58px 1fr auto;gap:20px;align-items:center;border:1px solid var(--line);background:var(--paper2);border-radius:30px;padding:22px 24px}
-    .guide-badge{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-family:Georgia,"Times New Roman",serif;font-weight:800;background:var(--blush);color:var(--plum)}
-    .guide:nth-child(2) .guide-badge{background:var(--sage-soft);color:var(--sage-dark)}
-    .guide:nth-child(3) .guide-badge{background:var(--sand);color:#6b512f}
-    .guide p{color:var(--muted);font-size:.94rem;margin:.42rem 0 0;max-width:720px}
+  .skip{
+    position:absolute; left:-9999px; top:10px;
+    background: var(--card); color: var(--ink);
+    padding: 10px 16px; border-radius: 999px; z-index: 100;
+    text-decoration:none; font-weight:700;
+  }
+  .skip:focus{ left: 16px; }
 
-    .family-box{max-width:900px;border:1px solid var(--line);background:var(--paper2);border-radius:32px;padding:27px 28px}
-    .family-box p{color:var(--muted)}
-    .family-box .data-line{font-family:Georgia,"Times New Roman",serif;font-size:1.5rem;color:var(--plum);font-weight:700;margin:4px 0 12px}
+  .eyebrow{
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    display: inline-block;
+    margin-bottom: 14px;
+  }
 
-    .cta{padding:60px 0;background:linear-gradient(135deg,var(--blush),#fbf7f1 52%,var(--sage-soft))}
-    .cta-box{max-width:850px;margin-inline:auto;text-align:center;border:1px solid var(--line);background:rgba(255,253,249,.95);border-radius:38px;padding:38px;box-shadow:var(--shadow)}
-    .cta-box p{max-width:650px;margin:12px auto 22px;color:var(--muted)}
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--sage-deep);
+    outline-offset: 3px;
+  }
 
-    .references{background:#efe7de}
-    .references .section-head{margin-bottom:23px}
-    .ref-list{max-width:980px;margin:0;padding-left:1.5rem;display:grid;gap:13px}
-    .ref{padding-left:4px;color:#4b4541;font-size:.9rem;line-height:1.55}
-    .ref a.external{color:var(--plum);font-weight:750;text-underline-offset:3px}
-    .back{display:inline-block;margin-left:8px;color:var(--plum);font-size:.82rem;font-weight:750;text-decoration:none}
-    .back:hover{text-decoration:underline}
-    footer{background:var(--ink);color:#f7f1ec;padding:28px 0}
-    .footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.84rem}
-    .footer-inner p{margin:0;color:#f7f1ec}
+  nav.site{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(239,236,224,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.site .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .wordmark{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+  }
+  .wordmark span{ color: var(--sage); }
+  nav.site ul{
+    list-style:none;
+    display:flex;
+    gap: 28px;
+    margin:0; padding:0;
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+  nav.site a{ text-decoration:none; color: var(--ink-soft); }
+  nav.site a:hover{ color: var(--sage-deep); }
+  .nav-cta{
+    background: var(--sage);
+    color: #fbf9ef !important;
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: 0.86rem !important;
+  }
+  .nav-cta:hover{ background: var(--sage-deep) !important; }
 
-    @media(max-width:900px){
-      .nav-links li:not(:last-child){display:none}
-      .hero-grid,.about-grid,.treatment-grid{grid-template-columns:1fr}
-      .problem-grid{grid-template-columns:1fr}
-      .guide{grid-template-columns:54px 1fr}
-      .guide .button{grid-column:2;justify-self:start}
-    }
-    @media(max-width:620px){
-      body{font-size:16px}.wrap{width:min(var(--wrap),calc(100% - 24px))}
-      .hero{padding:44px 0 46px}section{padding:52px 0}
-      h1{font-size:clamp(2.4rem,13vw,3.7rem)}
-      .skills{grid-template-columns:1fr}.guide{grid-template-columns:1fr;padding:21px}.guide .button{grid-column:1}
-      .cta-box{padding:27px 18px;border-radius:30px}
-    }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
-  </style>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"Understanding BPD","description":"Research-informed educational resources about borderline personality disorder created by Marley Spraggins.","author":{"@type":"Person","name":"Marley Spraggins"}}
-  </script>
+  .hero{
+    position: relative;
+    overflow: hidden;
+    padding: 96px 0 84px;
+  }
+  .bokeh{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity: 0.55;
+  }
+  .bokeh span{
+    position:absolute;
+    border-radius:50%;
+    filter: blur(2px);
+  }
+  .hero .wrap{ position:relative; z-index:1; }
+  .hero-inner{ max-width: 640px; }
+  .hero h1{
+    font-size: clamp(2.3rem, 5vw, 3.4rem);
+    margin-bottom: 22px;
+  }
+  .hero .lede{
+    font-size: 1.14rem;
+    color: var(--ink-soft);
+    max-width: 540px;
+  }
+  .hero .fine{
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    border-left: 3px solid var(--rose);
+    padding-left: 16px;
+    margin: 26px 0 34px;
+    max-width: 520px;
+  }
+  .btn-row{ display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+  .btn{
+    display:inline-block;
+    background: var(--sage);
+    color: #fbf9ef;
+    text-decoration:none;
+    font-weight: 700;
+    font-size: 0.96rem;
+    padding: 13px 26px;
+    border-radius: 999px;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .btn:hover{ background: var(--sage-deep); transform: translateY(-1px); }
+  .btn.ghost{
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--line);
+  }
+  .btn.ghost:hover{ border-color: var(--sage); color: var(--sage-deep); }
+
+  section{ padding: 78px 0; }
+  .band{ background: var(--bg-alt); }
+  .section-head{ max-width: 620px; margin-bottom: 44px; }
+  .section-head h2{ font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin-bottom: 14px; }
+  .section-head p{ color: var(--ink-soft); font-size: 1.04rem; margin:0; }
+
+  .stat-list{
+    list-style:none;
+    margin:0; padding:0;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 32px;
+  }
+  .stat-list li{
+    display:flex;
+    gap: 14px;
+    align-items:flex-start;
+    padding: 18px 20px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .stat-list .mark{
+    flex: none;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--rose);
+    margin-top: 8px;
+  }
+  .stat-list strong{
+    display:block;
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:600;
+    font-size: 1.02rem;
+    margin-bottom: 3px;
+  }
+  .stat-list p{ margin:0; font-size: 0.94rem; color: var(--ink-soft); }
+  .sources{
+    margin-top: 20px;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    opacity: 0.85;
+  }
+
+  .pull{
+    max-width: 680px;
+  }
+  .pull p{ font-size: 1.06rem; }
+  .punch{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:600;
+    font-size: 1.5rem;
+    color: var(--sage-deep);
+    margin: 24px 0 8px;
+  }
+
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items:center;
+  }
+  .about-photo{
+    position:relative;
+    border-radius: 20px;
+    overflow:hidden;
+    aspect-ratio: 4/5;
+    max-width: 100%;
+    box-shadow: 0 18px 40px -18px rgba(43,42,32,0.35);
+    background: linear-gradient(135deg, #d8d3bd, #c7c2a6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    text-align:center;
+  }
+  .about-photo img{
+    width:100%; height:100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display:block;
+  }
+  .about-text .eyebrow{ margin-bottom: 10px; }
+  .about-text h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 16px; }
+  .about-text p{ color: var(--ink-soft); font-size: 1.02rem; }
+  .about-text p.name-line{
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .guide-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .guide-card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+  }
+  .guide-num{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:600;
+    font-size: 0.85rem;
+    color: var(--rose);
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+  }
+  .guide-card h3{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .guide-card p{
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    flex-grow:1;
+  }
+  .guide-card .btn{
+    margin-top: 18px;
+    align-self:flex-start;
+    padding: 10px 20px;
+    font-size: 0.88rem;
+  }
+
+  .change{
+    background: var(--sage-deep);
+    color: #f3f1e6;
+  }
+  .change .section-head p{ color: rgba(243,241,230,0.82); }
+  .change .section-head h2{ color: #fdfcf6; }
+  .change .eyebrow{ color: #d9cfa8; }
+  .caps-line{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+    letter-spacing: 0.01em;
+    max-width: 680px;
+    margin: 8px 0 20px;
+    color: var(--gold);
+  }
+  .change .lede-after{
+    max-width: 620px;
+    color: rgba(243,241,230,0.86);
+    font-size: 1.02rem;
+  }
+
+  .closing{ text-align:center; }
+  .closing .wrap{ max-width: 620px; }
+  .closing h2{ font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 14px; }
+  .closing p{ color: var(--ink-soft); margin-bottom: 30px; }
+
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 34px 0;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 860px){
+    .about-grid{ grid-template-columns: 1fr; }
+    .about-photo{ max-width: 340px; margin: 0 auto; }
+    .guide-grid{ grid-template-columns: 1fr; }
+    .stat-list{ grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px){
+    .wrap{ padding: 0 20px; }
+    .hero{ padding: 64px 0 56px; }
+    section{ padding: 56px 0; }
+    nav.site ul li:not(:last-child){ display:none; }
+  }
+</style>
 </head>
 <body>
+
 <a class="skip" href="#main">Skip to content</a>
-<nav aria-label="Primary navigation">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#top">Understanding BPD</a>
-    <ul class="nav-links">
-      <li><a href="#problem">BPD Research</a></li>
-      <li><a href="#guides">Free Guides</a></li>
-      <li><a href="#about">About Marley</a></li>
-      <li><a class="button small" href="#free-guides">Get the guides</a></li>
+
+<nav class="site">
+  <div class="wrap">
+    <div class="wordmark">Understanding <span>BPD</span></div>
+    <ul>
+      <li><a href="#reality">The Reality</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#guides">Guides</a></li>
+      <li><a href="#guides" class="nav-cta">Get the Guides</a></li>
     </ul>
   </div>
 </nav>
 
 <main id="main">
-  <header class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <h1>Understanding Borderline Personality Disorder (BPD)</h1>
-        <p>Borderline personality disorder can affect emotions, relationships, self-image, and impulse control. Three free guides bring together research on BPD, evidence-based treatment, emotional regulation, and family support in one place.</p>
-        <p class="cta-row"><a class="button" href="thanks.html">Get the free guides</a></p>
-        <p class="form-note">Educational resources only. Not a diagnosis or a substitute for licensed mental-health care.</p>
-      </div>
-      <div class="photo-wrap">
-        <div class="hero-photo"><img src="images/marley.webp" width="1000" height="1501" alt="Marley Spraggins standing outdoors" fetchpriority="high" decoding="async"></div>
+
+<header class="hero">
+  <div class="bokeh" aria-hidden="true">
+    <span style="width:220px;height:220px; top:-40px; left:8%; background:radial-gradient(circle, rgba(195,154,94,0.55), transparent 70%);"></span>
+    <span style="width:160px;height:160px; top:120px; left:32%; background:radial-gradient(circle, rgba(87,101,74,0.35), transparent 70%);"></span>
+    <span style="width:260px;height:260px; top:-60px; right:6%; background:radial-gradient(circle, rgba(196,139,129,0.4), transparent 70%);"></span>
+    <span style="width:120px;height:120px; top:220px; right:24%; background:radial-gradient(circle, rgba(195,154,94,0.5), transparent 70%);"></span>
+  </div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">For families and friends</span>
+      <h1>For families trying to understand borderline personality disorder.</h1>
+      <p class="lede">Borderline personality disorder makes emotions land bigger and pass slower than they do for most people. For the family around someone with BPD, that can feel like standing on ground that shifts without warning.</p>
+      <p class="fine">A licensed therapist is still the right call for an actual diagnosis. These three free guides exist to help your family talk about what's happening long before you get there.</p>
+      <div class="btn-row">
+        <a href="#guides" class="btn">Get the free guides</a>
+        <a href="#reality" class="btn ghost">See the research</a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section class="soft" id="problem">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Borderline Personality Disorder Can Be Difficult to Recognize</h2>
-        <p>BPD does not look exactly the same in every person. Its diagnostic framework spans emotional regulation, relationships, identity, impulsivity, anger, self-harm, and stress-related changes in thinking.<a class="note-num" id="cite1" href="#ref1">[1]</a></p>
-      </div>
-      <div class="problem-grid">
-        <article class="problem">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3v18M7 6.5C5.2 7.4 4 9.1 4 11c0 2.1 1.4 3.9 3.4 4.6M17 6.5c1.8.9 3 2.6 3 4.5 0 2.1-1.4 3.9-3.4 4.6M8.5 4.5A4.4 4.4 0 0 1 12 3a4.4 4.4 0 0 1 3.5 1.5M8 19a4.5 4.5 0 0 0 4 2 4.5 4.5 0 0 0 4-2"/></svg>
-          </div>
-          <div class="problem-stat">5 of 9</div>
-          <h3>Diagnostic Criteria</h3>
-          <p>A diagnosis requires at least five of nine DSM-5-TR criteria. Those criteria can involve abandonment fears, unstable relationships, identity disturbance, impulsivity, self-harm or suicidality, mood reactivity, emptiness, anger, and stress-related paranoia or dissociation.<a class="note-num" href="#ref1">[1]</a></p>
-          <p class="subdata">The breadth of the criteria helps explain why BPD can present very differently from one person to another.</p>
-        </article>
-
-        <article class="problem">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21s-7-4.35-7-10.2A4.8 4.8 0 0 1 9.8 6c1.1 0 2.1.4 2.8 1.2A3.8 3.8 0 0 1 15.4 6 4.8 4.8 0 0 1 20 10.8C20 16.65 12 21 12 21Z"/></svg>
-          </div>
-          <div class="problem-stat">5.9% vs. 1.4%</div>
-          <h3>Suicide Risk</h3>
-          <p>A comprehensive review reported death by suicide in 5.9% of people with BPD compared with 1.4% among people with other personality disorders.<a class="note-num" id="cite2" href="#ref2">[2]</a></p>
-          <p class="subdata">The same review describes substantial impairment in relationships and daily functioning, which is one reason early recognition and evidence-based care matter.</p>
-        </article>
-
-        <article class="problem">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 18h14M7 18v-4m5 4V8m5 10v-7M6 5.5h12"/></svg>
-          </div>
-          <div class="problem-stat">92% &middot; 63% &middot; 74%</div>
-          <h3>Coping Skills Take Practice</h3>
-          <p>In a qualitative study of 24 patients learning distress-tolerance skills, 92% reported difficulty engaging with the skills, 63% said finding the right skill was extremely difficult, and 74% described frustration when a skill did not work at first.<a class="note-num" id="cite3" href="#ref3">[3]</a></p>
-          <p class="subdata">Half also said the skills helped them stop ruminating and think clearly again, showing why practice and fit matter.</p>
-        </article>
-      </div>
-      <p class="research-note">Marley&rsquo;s research also examined rejection sensitivity, mentalizing, trauma, parenting, family burden, and the interaction between biological vulnerability and environment.<a class="note-num" id="cite4" href="#ref4">[4]</a><a class="note-num" id="cite5" href="#ref5">[5]</a></p>
+<section id="reality" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The reality</span>
+      <h2>What the research actually shows</h2>
+      <p>Numbers pulled from Arkansas mental health data and peer-reviewed research on BPD, not guesswork.</p>
     </div>
-  </section>
-
-  <section>
-    <div class="wrap narrow">
-      <h2>Better Information Can Change the Conversation</h2>
-      <p>Confusion can make difficult relationships harder. Without a framework for understanding emotional dysregulation, fear of abandonment, impulsivity, or rejection sensitivity, behavior can easily feel inexplicable or personal.</p>
-      <p>Understanding BPD does not mean excusing harmful behavior. It provides language for recognizing patterns, setting appropriate boundaries, communicating more effectively, and knowing when professional help may be necessary.</p>
-    </div>
-  </section>
-
-  <section class="treatment" id="treatment">
-    <div class="wrap treatment-grid">
-      <div>
-        <h2>BPD Is Treatable</h2>
-        <p style="margin-top:15px;max-width:680px">Psychotherapy is the primary treatment for BPD. Dialectical Behavior Therapy, or DBT, was developed specifically for BPD and teaches four major skill areas.<a class="note-num" id="cite6" href="#ref6">[6]</a></p>
-        <div class="skills" style="margin-top:22px">
-          <article class="skill"><h3>Mindfulness</h3><p>Observing and participating in the present moment without immediately judging the experience.</p></article>
-          <article class="skill"><h3>Distress Tolerance</h3><p>Getting through intense emotional moments without adding new problems to the crisis.</p></article>
-          <article class="skill"><h3>Emotion Regulation</h3><p>Identifying emotions and triggers so strong reactions become easier to understand and manage.</p></article>
-          <article class="skill"><h3>Interpersonal Effectiveness</h3><p>Expressing needs, setting boundaries, and protecting self-respect while preserving important relationships.</p></article>
+    <ul class="stat-list">
+      <li>
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <strong>46th in the U.S.</strong>
+          <p>Arkansas ranks 46th out of 50 states for overall mental health. (Mental Health America, 2023)</p>
         </div>
-      </div>
-      <aside class="treatment-card">
-        <div class="big">22 studies</div>
-        <h3>Shorter DBT Programs Have Been Studied Too</h3>
-        <p>A 2025 systematic review of 22 studies found brief DBT-informed interventions generally feasible and effective for reducing BPD-specific symptoms and improving broader psychiatric symptoms and coping skills. Evidence was more mixed for severe behavioral outcomes such as suicide attempts and self-harm.<a class="note-num" id="cite7" href="#ref7">[7]</a></p>
-      </aside>
-    </div>
-  </section>
+      </li>
+      <li>
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <strong>Nearly 1 in 4</strong>
+          <p>Arkansas adults experienced some form of mental illness in 2021.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <strong>Nearly 1 in 3</strong>
+          <p>Arkansans report symptoms of depression, with over 140 census tracts showing rates above 40 percent, many of them rural.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <strong>~125,000 adults</strong>
+          <p>in Arkansas live with a serious mental illness, such as schizophrenia or bipolar disorder.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <strong>4x higher</strong>
+          <p>People living with BPD die by suicide at more than four times the rate of people with other personality disorders (5.9% vs. 1.4%).</p>
+        </div>
+      </li>
+      <li>
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <strong>Since 1980</strong>
+          <p>BPD wasn't formally recognized as a diagnosis until the DSM-III, part of why so many families have gone without a word for it.</p>
+        </div>
+      </li>
+    </ul>
+    <p class="sources">Sources: Mental Health America (2023), Arkansas mental health surveillance data, and peer-reviewed research on BPD prevalence and clinical outcomes.</p>
+  </div>
+</section>
 
-  <section id="about">
-    <div class="wrap about-grid">
-      <div class="about-photo"><img src="images/marley.webp" width="1000" height="1501" alt="Portrait of Marley Spraggins" loading="lazy" decoding="async"></div>
-      <div class="about-copy">
-        <h2>My Name Is Marley</h2>
-        <p>My interest in BPD began inside my own family.</p>
-        <p>Growing up around emotional and behavioral patterns I did not understand left me with questions that became easier to articulate once I began learning about borderline personality disorder.</p>
-        <p>I decided to research those questions rather than leave them unanswered. I studied diagnostic criteria, emotional regulation, neurobiology, developmental and environmental factors, treatment approaches, and research involving families and caregivers.</p>
-        <p>I then turned that research into three guides. They are not diagnostic tools or substitutes for professional mental-health care. They are designed to make credible information easier to find and give people a clearer place to begin.</p>
-      </div>
-    </div>
-  </section>
+<section>
+  <div class="wrap pull">
+    <span class="eyebrow">What it looks like at home</span>
+    <p>Someone with BPD can swing between adoring you and being furious with you in the same afternoon, terrified underneath it that you're about to leave. That's not a choice.</p>
+    <p class="punch">It's also not something families are equipped to untangle without some help.</p>
+  </div>
+</section>
 
-  <section class="soft" id="guides">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Three Guides. Three Different Starting Points.</h2>
-        <p>The overview explains the foundation. Two companion guides then separate the practical information for someone experiencing BPD from the information intended for family members, partners, and friends.</p>
+<section id="about" class="band">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="images/marley.webp" width="1000" height="1501" alt="Marley, standing outdoors at golden hour in a floral dress, smiling" loading="lazy" decoding="async">
       </div>
-      <div class="guides">
-        <article class="guide">
-          <div class="guide-badge">1</div>
-          <div><h3>Borderline Personality Disorder: Overview, Characteristics, and Causes</h3><p>A four-page guide to diagnostic criteria, emotional and interpersonal patterns, neurobiological research, environmental factors, childhood experiences, and current theories about how biological vulnerability and environment can interact.</p></div>
-          <a class="button sage" href="thanks.html">Get the overview</a>
-        </article>
-        <article class="guide">
-          <div class="guide-badge">2</div>
-          <div><h3>So You (Think You) Have Borderline Personality Disorder?</h3><p>A practical guide to DBT and its four major skill areas, distress-tolerance techniques, other evidence-supported therapies, and professional and crisis-support resources.</p></div>
-          <a class="button sage" href="thanks.html">Get the individual guide</a>
-        </article>
-        <article class="guide">
-          <div class="guide-badge">3</div>
-          <div><h3>So Someone You Love (Might Have) Borderline Personality Disorder?</h3><p>Research-informed ideas for discussing professional help, choosing calmer moments for difficult conversations, validating emotions while setting boundaries, and maintaining a support system of one&rsquo;s own.</p></div>
-          <a class="button sage" href="thanks.html">Get the loved-ones guide</a>
-        </article>
+      <div class="about-text">
+        <span class="eyebrow">About the guide</span>
+        <h2>Meet Marley</h2>
+        <p class="name-line">This project started with one family trying to make sense of a diagnosis.</p>
+        <p>Marley grew up watching her father's moods turn on a dime, long before either of them had a word for why. That question led her to spend a summer buried in clinical research on BPD, and to build the three guides on this page for other families doing the same thing hers did.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="wrap">
-      <div class="family-box">
-        <h2>Families Can Learn Skills Too</h2>
-        <div class="data-line">121 family members were included in a recent randomized trial.</div>
-        <p>Family-focused research has found that psychoeducation and skills-based programs can reduce caregiver burden and improve knowledge, coping, and family functioning. A 2024 randomized controlled trial of Family Connections included 121 relatives and found stronger adjusted outcomes across several family measures.<a class="note-num" id="cite8" href="#ref8">[8]</a></p>
+<section id="guides">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Start here</span>
+      <h2>Three free guides</h2>
+      <p>Download the overview first. Then pick the second guide based on your seat at the table.</p>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <span class="guide-num">01</span>
+        <h3>BPD Overview</h3>
+        <p>What borderline personality disorder is, where it tends to come from, and why it looks different from person to person.</p>
+        <a href="thanks.html" class="btn">Download PDF</a>
+      </div>
+      <div class="guide-card">
+        <span class="guide-num">02</span>
+        <h3>So (You Think) You Have BPD?</h3>
+        <p>For readers wondering if these patterns describe them, and where to go from here.</p>
+        <a href="thanks.html" class="btn">Download PDF</a>
+      </div>
+      <div class="guide-card">
+        <span class="guide-num">03</span>
+        <h3>So Someone You Love (Might Have) BPD?</h3>
+        <p>For readers watching someone they love go through it, from the outside looking in.</p>
+        <a href="thanks.html" class="btn">Download PDF</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="cta" id="free-guides">
-    <div class="wrap">
-      <div class="cta-box">
-        <h2>Get the Free BPD Guides</h2>
-        <p>Start with the overview, then choose the second guide based on which side of the experience is most relevant.</p>
-        <p class="cta-row"><a class="button" href="thanks.html">Get the free guides</a></p>
-      </div>
+<section class="change">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What can actually change</span>
+      <h2>BPD is treatable. That's newer than you'd think.</h2>
+      <p>Dialectical behavior therapy, developed for BPD in the early 1990s, has the strongest evidence base of any treatment built specifically for it. Family programs built around it have shown real drops in caregiver burden and grief.</p>
     </div>
-  </section>
+    <p class="caps-line">YOU ARE NOT RESPONSIBLE FOR FIXING SOMEONE ELSE'S BRAIN CHEMISTRY.</p>
+    <p class="lede-after">You are in a position to understand it better than you did five minutes ago. Start with the overview below.</p>
+  </div>
+</section>
 
-  <section class="references" id="works-cited">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Works Cited</h2>
-        <p>APA-style references for the research cited on this page.</p>
-      </div>
-      <ol class="ref-list">
-        <li class="ref" id="ref1">Australian BPD Foundation. (n.d.). <em>Diagnostic criteria for borderline personality disorder</em>. <a class="external" href="https://www.bpdfoundation.org.au/diagnostic-criteria.php" target="_blank" rel="noopener noreferrer">https://www.bpdfoundation.org.au/diagnostic-criteria.php</a> <a class="back" href="#cite1">Back to citation</a></li>
-        <li class="ref" id="ref2">Leichsenring, F., Fonagy, P., Heim, N., Kernberg, O. F., Leweke, F., Luyten, P., Salzer, S., Spitzer, C., &amp; Steinert, C. (2024). Borderline personality disorder: A comprehensive review of diagnosis and clinical presentation, etiology, treatment, and current controversies. <em>World Psychiatry, 23</em>(1), 4&ndash;25. <a class="external" href="https://doi.org/10.1002/wps.21156" target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/wps.21156</a> <a class="back" href="#cite2">Back to citation</a></li>
-        <li class="ref" id="ref3">Schaich, A., Braakmann, D., Rogg, M., Meine, C., Ambrosch, J., Assmann, N., Borgwardt, S., Schweiger, U., &amp; Fassbinder, E. (2021). How do patients with borderline personality disorder experience Distress Tolerance Skills in the context of dialectical behavioral therapy? A qualitative study. <em>PLOS ONE, 16</em>(6), e0252403. <a class="external" href="https://doi.org/10.1371/journal.pone.0252403" target="_blank" rel="noopener noreferrer">https://doi.org/10.1371/journal.pone.0252403</a> <a class="back" href="#cite3">Back to citation</a></li>
-        <li class="ref" id="ref4">Fonagy, P., Luyten, P., Allison, E., &amp; Campbell, C. (2017). What we have changed our minds about: Part 1. Borderline personality disorder as a limitation of resilience. <em>Borderline Personality Disorder and Emotion Dysregulation, 4</em>, 11. <a class="external" href="https://doi.org/10.1186/s40479-017-0061-9" target="_blank" rel="noopener noreferrer">https://doi.org/10.1186/s40479-017-0061-9</a> <a class="back" href="#cite4">Back to citation</a></li>
-        <li class="ref" id="ref5">Bozzatello, P., Rocca, P., Baldassarri, L., Bosia, M., &amp; Bellino, S. (2021). The role of trauma in early onset borderline personality disorder: A biopsychosocial perspective. <em>Frontiers in Psychiatry, 12</em>, 721361. <a class="external" href="https://doi.org/10.3389/fpsyt.2021.721361" target="_blank" rel="noopener noreferrer">https://doi.org/10.3389/fpsyt.2021.721361</a> <a class="back" href="#cite5">Back to citation</a></li>
-        <li class="ref" id="ref6">May, J. M., Richardi, T. M., &amp; Barth, K. S. (2016). Dialectical behavior therapy as treatment for borderline personality disorder. <em>Mental Health Clinician, 6</em>(2), 62&ndash;67. <a class="external" href="https://doi.org/10.9740/mhc.2016.03.62" target="_blank" rel="noopener noreferrer">https://doi.org/10.9740/mhc.2016.03.62</a> <a class="back" href="#cite6">Back to citation</a></li>
-        <li class="ref" id="ref7">Zhang, Y., Chen, S. X., Smit, M., &amp; Chapman, A. L. (2025). Feasibility and efficacy of brief DBT intervention for adults with borderline personality disorder/traits: A systematic review. <em>Personality and Mental Health, 19</em>(4), e70034. <a class="external" href="https://doi.org/10.1002/pmh.70034" target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/pmh.70034</a> <a class="back" href="#cite7">Back to citation</a></li>
-        <li class="ref" id="ref8">Guill&eacute;n, V., Fern&aacute;ndez-Felipe, I., Marco, J. H., Grau, A., Botella, C., &amp; Garc&iacute;a-Palacios, A. (2024). &ldquo;Family Connections,&rdquo; a program for relatives of people with borderline personality disorder: A randomized controlled trial. <em>Family Process, 63</em>(4), 2195&ndash;2214. <a class="external" href="https://doi.org/10.1111/famp.13089" target="_blank" rel="noopener noreferrer">https://doi.org/10.1111/famp.13089</a> <a class="back" href="#cite8">Back to citation</a></li>
-      </ol>
-    </div>
-  </section>
+<section class="closing">
+  <div class="wrap">
+    <h2>Ready to start making sense of it?</h2>
+    <p>Thanks for reading this far. However this looks for your family, we hope it helps somewhere.</p>
+    <a href="#guides" class="btn">Get the free guides</a>
+  </div>
+</section>
+
 </main>
-<footer><div class="wrap footer-inner"><p>Understanding BPD &middot; A research project by Marley Spraggins</p><p>Educational information only. Not a substitute for diagnosis or treatment by a licensed professional.</p></div></footer>
+
+<footer>
+  <div class="wrap">
+    <span>Understanding BPD &mdash; a resource built by Marley</span>
+    <span>Not a substitute for care from a licensed therapist.</span>
+  </div>
+</footer>
+
 </body>
 </html>
