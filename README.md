@@ -11,6 +11,19 @@ private repository requires a paid plan. The URL above is the address Pages will
 use the moment the repository is made public and Pages is enabled on `main` at
 root, which is the same setup used by `kindled-movement` and `woven`.
 
+### Preview link (working now)
+
+**https://claude.ai/artifact/Kg4od2bxK4ipvxBLv9nmw9**
+
+A hosted copy of the page so it can be reviewed before launch. Private by default;
+shareable from the page's share menu. The three PDF buttons 404 there too, for the
+same reason they do here.
+
+Note that the preview is generated from `index.html` with the outer
+`<!doctype>/<html>/<head>/<body>` wrapper stripped, because that host supplies its
+own. It is a copy, not a source file, so it does not update when `index.html`
+changes. `index.html` remains the single source of truth.
+
 ## Status
 
 Deployed and viewable, but not finished. Two things are still outstanding.
