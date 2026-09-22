@@ -6,6 +6,11 @@ Landing site for Marley Spraggins' passion project: three free, research-informe
 
 **https://odyssey-jotun.github.io/understanding-bpd/**
 
+Not serving yet. This repository is currently **private**, and GitHub Pages on a
+private repository requires a paid plan. The URL above is the address Pages will
+use the moment the repository is made public and Pages is enabled on `main` at
+root, which is the same setup used by `kindled-movement` and `woven`.
+
 ## Status
 
 Deployed and viewable, but not finished. Two things are still outstanding.
