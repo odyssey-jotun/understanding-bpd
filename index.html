@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Understanding BPD &mdash; A Guide for Families</title>
 <meta name="description" content="Three free research-informed guides to borderline personality disorder for families, friends, and anyone trying to make sense of a diagnosis.">
-<!-- TEMPORARY: noindex while the PDFs are missing and citations are unverified. Flip to "index,follow" before launch. -->
+<!-- TEMPORARY: noindex while the PDFs are missing. Flip to "index,follow" before launch. -->
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#efece0">
 <meta property="og:title" content="Understanding BPD &mdash; A Guide for Families">
@@ -90,6 +90,18 @@
     outline-offset: 3px;
   }
 
+  /* citation superscripts */
+  .cite{
+    font-size: 0.62em;
+    vertical-align: super;
+    font-weight: 700;
+    color: var(--sage);
+    text-decoration: none;
+    margin-left: 2px;
+  }
+  .cite:hover{ text-decoration: underline; }
+  .change .cite{ color: var(--gold); }
+
   nav.site{
     position: sticky;
     top: 0;
@@ -131,25 +143,25 @@
   }
   .nav-cta:hover{ background: var(--sage-deep) !important; }
 
+  /* ---------- hero with photograph ---------- */
   .hero{
     position: relative;
     overflow: hidden;
-    padding: 96px 0 84px;
+    padding: 104px 0 92px;
+    background-image:
+      linear-gradient(100deg, var(--bg) 0%, var(--bg) 38%, rgba(239,236,224,0.92) 50%, rgba(239,236,224,0.35) 72%, rgba(239,236,224,0.18) 100%),
+      url('images/hero-meadow.webp');
+    background-size: cover, cover;
+    background-position: center, center 60%;
   }
-  .bokeh{
-    position:absolute;
-    inset:0;
-    z-index:0;
+  .hero:after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0; height:120px;
+    background: linear-gradient(180deg, rgba(239,236,224,0), var(--bg));
     pointer-events:none;
-    opacity: 0.55;
-  }
-  .bokeh span{
-    position:absolute;
-    border-radius:50%;
-    filter: blur(2px);
   }
   .hero .wrap{ position:relative; z-index:1; }
-  .hero-inner{ max-width: 640px; }
+  .hero-inner{ max-width: 600px; }
   .hero h1{
     font-size: clamp(2.3rem, 5vw, 3.4rem);
     margin-bottom: 22px;
@@ -181,7 +193,7 @@
   }
   .btn:hover{ background: var(--sage-deep); transform: translateY(-1px); }
   .btn.ghost{
-    background: transparent;
+    background: rgba(250,248,239,0.55);
     color: var(--ink);
     border: 1.5px solid var(--line);
   }
@@ -189,66 +201,109 @@
 
   section{ padding: 78px 0; }
   .band{ background: var(--bg-alt); }
-  .section-head{ max-width: 620px; margin-bottom: 44px; }
+  .section-head{ max-width: 640px; margin-bottom: 40px; }
   .section-head h2{ font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin-bottom: 14px; }
   .section-head p{ color: var(--ink-soft); font-size: 1.04rem; margin:0; }
 
-  .stat-list{
-    list-style:none;
-    margin:0; padding:0;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px 32px;
+  /* ---------- BPD headline figures ---------- */
+  .group-label{
+    display:flex; align-items:center; gap: 14px;
+    margin: 0 0 22px;
+    font-family:'Karla', sans-serif;
+    font-weight:700; font-size: 0.74rem;
+    letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--sage-deep);
   }
-  .stat-list li{
-    display:flex;
-    gap: 14px;
-    align-items:flex-start;
-    padding: 18px 20px;
+  .group-label:after{
+    content:""; flex:1; height:1px; background: var(--line);
+  }
+
+  .figures{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .figure{
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius);
+    padding: 28px 24px;
+    border-top: 3px solid var(--rose);
   }
-  .stat-list .mark{
-    flex: none;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--rose);
-    margin-top: 8px;
+  .figure .num{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--sage-deep);
+    margin-bottom: 10px;
   }
-  .stat-list strong{
+  .figure h3{ font-size: 1.02rem; margin-bottom: 8px; }
+  .figure p{ margin:0; font-size: 0.94rem; color: var(--ink-soft); }
+
+  /* ---------- Arkansas context, visually subordinate ---------- */
+  .context{
+    margin-top: 52px;
+    background: rgba(87,101,74,0.07);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px 30px 26px;
+  }
+  .context > p.why{
+    max-width: 640px;
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
+  .context-grid{
+    list-style:none; margin:0; padding:0;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .context-grid li{
+    border-left: 2px solid var(--rose);
+    padding-left: 14px;
+  }
+  .context-grid strong{
     display:block;
     font-family:'Fraunces', Georgia, serif;
-    font-weight:600;
-    font-size: 1.02rem;
-    margin-bottom: 3px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    color: var(--ink);
   }
-  .stat-list p{ margin:0; font-size: 0.94rem; color: var(--ink-soft); }
-  .sources{
-    margin-top: 20px;
-    font-size: 0.82rem;
-    color: var(--ink-soft);
-    opacity: 0.85;
-  }
+  .context-grid p{ margin:0; font-size: 0.87rem; color: var(--ink-soft); line-height: 1.45; }
 
-  .pull{
-    max-width: 680px;
-  }
-  .pull p{ font-size: 1.06rem; }
-  .punch{
-    font-family:'Fraunces', Georgia, serif;
-    font-weight:600;
-    font-size: 1.5rem;
-    color: var(--sage-deep);
-    margin: 24px 0 8px;
-  }
-
-  .about-grid{
+  /* ---------- media split ---------- */
+  .split{
     display:grid;
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 1.05fr 0.95fr;
     gap: 56px;
     align-items:center;
   }
+  .split.flip{ grid-template-columns: 0.95fr 1.05fr; }
+  .shot{
+    border-radius: 18px;
+    overflow:hidden;
+    box-shadow: 0 18px 40px -18px rgba(43,42,32,0.35);
+    background: var(--bg-alt);
+  }
+  .shot img{ display:block; width:100%; height:100%; object-fit: cover; }
+  .shot.tall{ aspect-ratio: 3/4; }
+  .shot.wide{ aspect-ratio: 4/3; }
+
+  .pull p{ font-size: 1.06rem; color: var(--ink-soft); }
+  .punch{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:600;
+    font-size: 1.45rem;
+    color: var(--sage-deep);
+    margin: 22px 0 0;
+  }
+
   .about-photo{
     position:relative;
     border-radius: 20px;
@@ -257,17 +312,11 @@
     max-width: 100%;
     box-shadow: 0 18px 40px -18px rgba(43,42,32,0.35);
     background: linear-gradient(135deg, #d8d3bd, #c7c2a6);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color: var(--ink-soft);
-    font-size: 0.85rem;
-    text-align:center;
   }
   .about-photo img{
     width:100%; height:100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 28%;
     display:block;
   }
   .about-text .eyebrow{ margin-bottom: 10px; }
@@ -301,9 +350,11 @@
     letter-spacing: 0.06em;
     margin-bottom: 14px;
   }
-  .guide-card h3{
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+  .guide-card h3{ font-size: 1.2rem; margin-bottom: 10px; }
+  .guide-card .who{
+    font-size: 0.74rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 10px;
   }
   .guide-card p{
     color: var(--ink-soft);
@@ -324,25 +375,43 @@
   .change .section-head p{ color: rgba(243,241,230,0.82); }
   .change .section-head h2{ color: #fdfcf6; }
   .change .eyebrow{ color: #d9cfa8; }
+  .change .shot{ box-shadow: 0 18px 40px -18px rgba(0,0,0,0.5); }
   .caps-line{
     font-family:'Fraunces', Georgia, serif;
     font-weight: 700;
-    font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
     letter-spacing: 0.01em;
-    max-width: 680px;
-    margin: 8px 0 20px;
+    margin: 4px 0 18px;
     color: var(--gold);
   }
   .change .lede-after{
-    max-width: 620px;
     color: rgba(243,241,230,0.86);
     font-size: 1.02rem;
+    margin: 0;
   }
 
   .closing{ text-align:center; }
   .closing .wrap{ max-width: 620px; }
   .closing h2{ font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 14px; }
   .closing p{ color: var(--ink-soft); margin-bottom: 30px; }
+
+  /* ---------- works cited ---------- */
+  .refs{ background: var(--bg-alt); }
+  .refs ol{
+    max-width: 820px;
+    margin: 0; padding-left: 1.3rem;
+    display:grid; gap: 11px;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .refs li{ padding-left: 4px; }
+  .refs a.src{ color: var(--sage-deep); font-weight: 600; text-underline-offset: 2px; word-break: break-word; }
+  .refs .backref{
+    margin-left: 6px; font-size: 0.8em; font-weight: 700;
+    color: var(--sage); text-decoration: none;
+  }
+  .refs .backref:hover{ text-decoration: underline; }
 
   footer{
     border-top: 1px solid var(--line);
@@ -358,17 +427,28 @@
     gap: 10px;
   }
 
+  @media (max-width: 980px){
+    .context-grid{ grid-template-columns: repeat(2, 1fr); gap: 20px 26px; }
+  }
   @media (max-width: 860px){
-    .about-grid{ grid-template-columns: 1fr; }
+    .split, .split.flip{ grid-template-columns: 1fr; gap: 34px; }
+    .split .shot{ max-width: 420px; margin: 0 auto; width: 100%; }
     .about-photo{ max-width: 340px; margin: 0 auto; }
     .guide-grid{ grid-template-columns: 1fr; }
-    .stat-list{ grid-template-columns: 1fr; }
+    .figures{ grid-template-columns: 1fr; }
+    .hero{
+      background-image:
+        linear-gradient(180deg, rgba(239,236,224,0.95) 0%, rgba(239,236,224,0.88) 55%, rgba(239,236,224,0.55) 100%),
+        url('images/hero-meadow.webp');
+    }
   }
   @media (max-width: 620px){
     .wrap{ padding: 0 20px; }
     .hero{ padding: 64px 0 56px; }
     section{ padding: 56px 0; }
     nav.site ul li:not(:last-child){ display:none; }
+    .context{ padding: 24px 20px 20px; }
+    .context-grid{ grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -391,18 +471,12 @@
 <main id="main">
 
 <header class="hero">
-  <div class="bokeh" aria-hidden="true">
-    <span style="width:220px;height:220px; top:-40px; left:8%; background:radial-gradient(circle, rgba(195,154,94,0.55), transparent 70%);"></span>
-    <span style="width:160px;height:160px; top:120px; left:32%; background:radial-gradient(circle, rgba(87,101,74,0.35), transparent 70%);"></span>
-    <span style="width:260px;height:260px; top:-60px; right:6%; background:radial-gradient(circle, rgba(196,139,129,0.4), transparent 70%);"></span>
-    <span style="width:120px;height:120px; top:220px; right:24%; background:radial-gradient(circle, rgba(195,154,94,0.5), transparent 70%);"></span>
-  </div>
   <div class="wrap">
     <div class="hero-inner">
-      <span class="eyebrow">For families and friends</span>
+      <span class="eyebrow">For families, friends, and anyone who sees themselves in it</span>
       <h1>For families trying to understand borderline personality disorder.</h1>
       <p class="lede">Borderline personality disorder makes emotions land bigger and pass slower than they do for most people. For the family around someone with BPD, that can feel like standing on ground that shifts without warning.</p>
-      <p class="fine">A licensed therapist is still the right call for an actual diagnosis. These three free guides exist to help your family talk about what's happening long before you get there.</p>
+      <p class="fine">A licensed therapist is still the right call for an actual diagnosis. These three free guides exist to help your family talk about what's happening long before you get there. One of them is written for the person living with it.</p>
       <div class="btn-row">
         <a href="#guides" class="btn">Get the free guides</a>
         <a href="#reality" class="btn ghost">See the research</a>
@@ -416,76 +490,76 @@
     <div class="section-head">
       <span class="eyebrow">The reality</span>
       <h2>What the research actually shows</h2>
-      <p>Numbers pulled from Arkansas mental health data and peer-reviewed research on BPD, not guesswork.</p>
+      <p>Two different things worth knowing: what BPD is, and how hard it is to get help for it in Arkansas. Every figure below is sourced at the bottom of the page.</p>
     </div>
-    <ul class="stat-list">
-      <li>
-        <span class="mark" aria-hidden="true"></span>
-        <div>
-          <strong>46th in the U.S.</strong>
-          <p>Arkansas ranks 46th out of 50 states for overall mental health. (Mental Health America, 2023)</p>
-        </div>
-      </li>
-      <li>
-        <span class="mark" aria-hidden="true"></span>
-        <div>
+
+    <p class="group-label">What BPD is</p>
+    <div class="figures">
+      <div class="figure">
+        <div class="num">5 of 9</div>
+        <h3>criteria required</h3>
+        <p>A diagnosis needs at least five of nine criteria, which is why two people with the same diagnosis can look nothing alike.<a class="cite" id="c1" href="#r1">1</a></p>
+      </div>
+      <div class="figure">
+        <div class="num">4&times; higher</div>
+        <h3>rate of death by suicide</h3>
+        <p>5.9% among people with BPD, against 1.4% among people with other personality disorders.<a class="cite" id="c2" href="#r2">2</a></p>
+      </div>
+      <div class="figure">
+        <div class="num">1980</div>
+        <h3>first named in the DSM</h3>
+        <p>BPD was not a formal diagnosis until the DSM-III, part of why so many families went years without a word for it.<a class="cite" id="c3" href="#r3">3</a></p>
+      </div>
+    </div>
+
+    <div class="context">
+      <p class="group-label" style="margin-bottom:14px">The Arkansas context</p>
+      <p class="why">These numbers are about mental health in Arkansas generally, not about BPD specifically. They are here because they describe the gap these guides are trying to partly fill: a shortage of licensed therapists, cost, distance, and stigma all sit between families and a real diagnosis.</p>
+      <ul class="context-grid">
+        <li>
+          <strong>46th of 50</strong>
+          <p>State ranking for overall mental health.<a class="cite" id="c4" href="#r4">4</a></p>
+        </li>
+        <li>
           <strong>Nearly 1 in 4</strong>
-          <p>Arkansas adults experienced some form of mental illness in 2021.</p>
-        </div>
-      </li>
-      <li>
-        <span class="mark" aria-hidden="true"></span>
-        <div>
+          <p>Arkansas adults experienced some form of mental illness in 2021.<a class="cite" id="c5" href="#r5">5</a></p>
+        </li>
+        <li>
           <strong>Nearly 1 in 3</strong>
-          <p>Arkansans report symptoms of depression, with over 140 census tracts showing rates above 40 percent, many of them rural.</p>
-        </div>
-      </li>
-      <li>
-        <span class="mark" aria-hidden="true"></span>
-        <div>
-          <strong>~125,000 adults</strong>
-          <p>in Arkansas live with a serious mental illness, such as schizophrenia or bipolar disorder.</p>
-        </div>
-      </li>
-      <li>
-        <span class="mark" aria-hidden="true"></span>
-        <div>
-          <strong>4x higher</strong>
-          <p>People living with BPD die by suicide at more than four times the rate of people with other personality disorders (5.9% vs. 1.4%).</p>
-        </div>
-      </li>
-      <li>
-        <span class="mark" aria-hidden="true"></span>
-        <div>
-          <strong>Since 1980</strong>
-          <p>BPD wasn't formally recognized as a diagnosis until the DSM-III, part of why so many families have gone without a word for it.</p>
-        </div>
-      </li>
-    </ul>
-    <p class="sources">Sources: Mental Health America (2023), Arkansas mental health surveillance data, and peer-reviewed research on BPD prevalence and clinical outcomes.</p>
+          <p>Report symptoms of depression. Over 140 census tracts exceed 40%, many of them rural.<a class="cite" id="c6" href="#r6">6</a></p>
+        </li>
+        <li>
+          <strong>~125,000</strong>
+          <p>Adults living with a serious mental illness.<a class="cite" href="#r5">5</a></p>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section>
-  <div class="wrap pull">
-    <span class="eyebrow">What it looks like at home</span>
-    <p>Someone with BPD can swing between adoring you and being furious with you in the same afternoon, terrified underneath it that you're about to leave. That's not a choice.</p>
-    <p class="punch">It's also not something families are equipped to untangle without some help.</p>
+  <div class="wrap split">
+    <div class="pull">
+      <span class="eyebrow">What it looks like at home</span>
+      <p>Someone with BPD can swing between adoring you and being furious with you in the same afternoon, terrified underneath it that you're about to leave. That's not a choice.</p>
+      <p class="punch">It's also not something families are equipped to untangle without some help.</p>
+    </div>
+    <div class="shot wide">
+      <img src="images/home-window.webp" width="1200" height="788" alt="Morning sun coming through a kitchen window behind a potted herb" loading="lazy" decoding="async">
+    </div>
   </div>
 </section>
 
 <section id="about" class="band">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="about-photo">
-        <img src="images/marley.webp" width="1000" height="1501" alt="Marley, standing outdoors at golden hour in a floral dress, smiling" loading="lazy" decoding="async">
-      </div>
-      <div class="about-text">
-        <span class="eyebrow">About the guide</span>
-        <h2>Meet Marley</h2>
-        <p class="name-line">This project started with one family trying to make sense of a diagnosis.</p>
-        <p>Marley grew up watching her father's moods turn on a dime, long before either of them had a word for why. That question led her to spend a summer buried in clinical research on BPD, and to build the three guides on this page for other families doing the same thing hers did.</p>
-      </div>
+  <div class="wrap split flip">
+    <div class="about-photo">
+      <img src="images/marley.webp" width="1000" height="1501" alt="Marley, standing outdoors at golden hour in a floral dress, smiling" loading="lazy" decoding="async">
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">About the guide</span>
+      <h2>Meet Marley</h2>
+      <p class="name-line">This project started with one family trying to make sense of a diagnosis.</p>
+      <p>Marley grew up inside a family where emotions ran high and nobody had a word for why. That question led her to spend a summer buried in clinical research on BPD, and to build the three guides on this page for other families doing the same thing hers did.</p>
     </div>
   </div>
 </section>
@@ -500,18 +574,21 @@
     <div class="guide-grid">
       <div class="guide-card">
         <span class="guide-num">01</span>
+        <p class="who">Start here</p>
         <h3>BPD Overview</h3>
         <p>What borderline personality disorder is, where it tends to come from, and why it looks different from person to person.</p>
         <a href="thanks.html" class="btn">Download PDF</a>
       </div>
       <div class="guide-card">
         <span class="guide-num">02</span>
+        <p class="who">If it might be you</p>
         <h3>So (You Think) You Have BPD?</h3>
         <p>For readers wondering if these patterns describe them, and where to go from here.</p>
         <a href="thanks.html" class="btn">Download PDF</a>
       </div>
       <div class="guide-card">
         <span class="guide-num">03</span>
+        <p class="who">If it might be someone you love</p>
         <h3>So Someone You Love (Might Have) BPD?</h3>
         <p>For readers watching someone they love go through it, from the outside looking in.</p>
         <a href="thanks.html" class="btn">Download PDF</a>
@@ -521,14 +598,17 @@
 </section>
 
 <section class="change">
-  <div class="wrap">
-    <div class="section-head">
+  <div class="wrap split">
+    <div>
       <span class="eyebrow">What can actually change</span>
-      <h2>BPD is treatable. That's newer than you'd think.</h2>
-      <p>Dialectical behavior therapy, developed for BPD in the early 1990s, has the strongest evidence base of any treatment built specifically for it. Family programs built around it have shown real drops in caregiver burden and grief.</p>
+      <h2 style="color:#fdfcf6; font-size:clamp(1.7rem,3.2vw,2.3rem); margin-bottom:14px">BPD is treatable. That's newer than you'd think.</h2>
+      <p style="color:rgba(243,241,230,0.82); margin-bottom:22px">Dialectical behavior therapy, developed for BPD in the early 1990s, has the strongest evidence base of any treatment built specifically for it.<a class="cite" id="c3b" href="#r3">3</a> Family programs built around it have shown real drops in caregiver burden.<a class="cite" id="c7" href="#r7">7</a></p>
+      <p class="caps-line">YOU ARE NOT RESPONSIBLE FOR REGULATING SOMEONE ELSE'S EMOTIONS.</p>
+      <p class="lede-after">You are in a position to understand it better than you did five minutes ago. Start with the overview above.</p>
     </div>
-    <p class="caps-line">YOU ARE NOT RESPONSIBLE FOR FIXING SOMEONE ELSE'S BRAIN CHEMISTRY.</p>
-    <p class="lede-after">You are in a position to understand it better than you did five minutes ago. Start with the overview below.</p>
+    <div class="shot tall">
+      <img src="images/mist-clearing.webp" width="900" height="1350" alt="Morning mist lifting off a forested ridge at sunrise" loading="lazy" decoding="async">
+    </div>
   </div>
 </section>
 
@@ -537,6 +617,24 @@
     <h2>Ready to start making sense of it?</h2>
     <p>Thanks for reading this far. However this looks for your family, we hope it helps somewhere.</p>
     <a href="#guides" class="btn">Get the free guides</a>
+  </div>
+</section>
+
+<section class="refs" id="sources">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:26px">
+      <span class="eyebrow">Sources</span>
+      <h2 style="font-size:clamp(1.4rem,2.6vw,1.8rem)">Works cited</h2>
+    </div>
+    <ol>
+      <li id="r1">American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed., text rev.), p. 752. <a class="backref" href="#c1">&uarr;</a></li>
+      <li id="r2">Leichsenring, F., Fonagy, P., Heim, N., Kernberg, O. F., Leweke, F., Luyten, P., Salzer, S., Spitzer, C., &amp; Steinert, C. (2024). Borderline personality disorder: A comprehensive review of diagnosis and clinical presentation, etiology, treatment, and current controversies. <em>World Psychiatry, 23</em>(1), 4&ndash;25. <a class="src" href="https://doi.org/10.1002/wps.21156" target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/wps.21156</a> <a class="backref" href="#c2">&uarr;</a></li>
+      <li id="r3">Linehan, M. M. (1993). <em>Cognitive-behavioral treatment of borderline personality disorder</em>. Guilford Press. <a class="backref" href="#c3">&uarr;</a></li>
+      <li id="r4">Mental Health America. (2023). <em>The state of mental health in America 2023</em>. <a class="backref" href="#c4">&uarr;</a></li>
+      <li id="r5">Time Wellness Arkansas. <em>Arkansas mental health statistics</em>. <a class="backref" href="#c5">&uarr;</a></li>
+      <li id="r6"><em>Nearly one in three Arkansans report symptoms of depression</em>. <a class="backref" href="#c6">&uarr;</a></li>
+      <li id="r7">Guill&eacute;n, V., Fern&aacute;ndez-Felipe, I., Marco, J. H., Grau, A., Botella, C., &amp; Garc&iacute;a-Palacios, A. (2024). &ldquo;Family Connections,&rdquo; a program for relatives of people with borderline personality disorder: A randomized controlled trial. <em>Family Process, 63</em>(4), 2195&ndash;2214. <a class="src" href="https://doi.org/10.1111/famp.13089" target="_blank" rel="noopener noreferrer">https://doi.org/10.1111/famp.13089</a> <a class="backref" href="#c7">&uarr;</a></li>
+    </ol>
   </div>
 </section>
 
