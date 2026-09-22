@@ -66,17 +66,55 @@ The site is set to `noindex,nofollow` until the PDFs land. Flip the robots meta 
 | File | Use | Source |
 | --- | --- | --- |
 | `images/marley.webp` | About section only | Marley's own portrait |
-| `images/hero-meadow.webp` | Hero background | Unsplash |
-| `images/home-window.webp` | "What it looks like at home" | Unsplash |
-| `images/mist-clearing.webp` | "What can actually change" | Unsplash |
+| `images/hero-reading.webp` | Hero | Unsplash |
+| `images/home-family.webp` | "What it looks like at home" | Unsplash |
+| `images/change-friends.webp` | "What can actually change" | Unsplash |
 
 Unsplash photos are free for commercial use with no attribution required. All are
-converted to WebP and committed to the repo rather than hotlinked, so the page has
-no external image dependencies.
+converted to WebP and committed rather than hotlinked, so the page has no external
+image dependencies.
 
-Deliberately no stock photos of distressed-looking people. Marley's own StoryBrand
-failure marker was the perpetuation of stigma, and that genre of image is the most
-common way mental health sites do exactly that.
+People, not landscapes, and none of them distressed. Marley's own StoryBrand failure
+marker was the perpetuation of stigma, and photographs of visibly miserable people
+are the most common way mental health sites do exactly that.
+
+## Accessibility
+
+Palette is warm bone, deep indigo, and terracotta. Every text/background pair is
+verified against WCAG 2.1 AA (4.5:1 minimum). Measured ratios:
+
+| Pair | Ratio | AA |
+| --- | --- | --- |
+| Body text on page background | 14.34 | pass |
+| Body text on alt band | 12.65 | pass |
+| Secondary text on page background | 7.36 | pass |
+| Secondary text on alt band | 6.49 | pass |
+| Labels and links on page background | 11.30 | pass |
+| Button label on primary | 12.40 | pass |
+| Accent text on page background | 5.47 | pass |
+| Accent text on alt band | 4.82 | pass |
+| Dark band body text | 14.87 | pass |
+| Dark band secondary text | 10.58 | pass |
+| Dark band accent line | 8.07 | pass |
+
+Also implemented, covering the WCAG criteria most often cited in ADA web
+accessibility complaints:
+
+- Single `h1`, no skipped heading levels, verified by script
+- Descriptive `alt` text on every image
+- Skip-to-content link, `main` landmark, labelled `nav`
+- Three "Download PDF" buttons carry screen-reader-only text naming which guide,
+  so link purpose is clear out of context (WCAG 2.4.4)
+- Visible 3px focus ring on every interactive element
+- Interactive targets at least 44px tall
+- No meaning conveyed by color alone
+- Page zoom not disabled
+- `prefers-reduced-motion` respected
+- The emphasis line is sentence case rather than literal capitals, which some
+  screen readers spell out letter by letter
+
+Re-run the checks with the scripts noted in the commit history if the palette or
+markup changes.
 
 ## Structure
 
