@@ -6,23 +6,15 @@ Landing site for Marley Spraggins' passion project: three free, research-informe
 
 **https://odyssey-jotun.github.io/understanding-bpd/**
 
-Not serving yet. This repository is currently **private**, and GitHub Pages on a
-private repository requires a paid plan. The URL above is the address Pages will
-use the moment the repository is made public and Pages is enabled on `main` at
-root, which is the same setup used by `kindled-movement` and `woven`.
+Live. The repository is public and GitHub Pages serves `main` at root, the same
+setup used by `kindled-movement` and `woven`. Pushing to `main` redeploys.
 
-### Preview link (working now)
+The page is still `noindex,nofollow` on purpose. Being reachable is not the same as
+being findable: the three guide PDFs are missing, so search traffic would land on
+download buttons that 404. Flip the robots meta in `index.html` once the PDFs are in.
 
-**https://claude.ai/artifact/Kg4od2bxK4ipvxBLv9nmw9**
-
-A hosted copy of the page so it can be reviewed before launch. Private by default;
-shareable from the page's share menu. The three PDF buttons 404 there too, for the
-same reason they do here.
-
-Note that the preview is generated from `index.html` with the outer
-`<!doctype>/<html>/<head>/<body>` wrapper stripped, because that host supplies its
-own. It is a copy, not a source file, so it does not update when `index.html`
-changes. `index.html` remains the single source of truth.
+`index.html` is the single source of truth. There is no hosted copy of the page
+anywhere else, so there is nothing that can drift out of sync with it.
 
 ## Status
 
