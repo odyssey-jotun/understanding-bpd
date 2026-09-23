@@ -16,42 +16,65 @@ download buttons that 404. Flip the robots meta in `index.html` once the PDFs ar
 `index.html` is the single source of truth. There is no hosted copy of the page
 anywhere else, so there is nothing that can drift out of sync with it.
 
+## The guides
+
+All three are in `downloads/` and live on the site. Direct links:
+
+| Guide | File | Live link |
+| --- | --- | --- |
+| 1. Overview, Characteristics, and Causes | `downloads/BPD_Overview.pdf` | https://odyssey-jotun.github.io/understanding-bpd/downloads/BPD_Overview.pdf |
+| 2. So You (Think) You Have BPD? | `downloads/bpd_patient_guide_v6.pdf` | https://odyssey-jotun.github.io/understanding-bpd/downloads/bpd_patient_guide_v6.pdf |
+| 3. So Someone You Love (Might Have) BPD? | `downloads/bpd_loved_ones_guide_v2.pdf` | https://odyssey-jotun.github.io/understanding-bpd/downloads/bpd_loved_ones_guide_v2.pdf |
+
+Six pages each (seven for guide two), around 650KB, US Letter.
+
+### How they are built
+
+The PDFs are generated, not hand-made. Source is in `guide-src/`, with its own README:
+one shared stylesheet, one content file per guide, and a Playwright script that prints
+each to PDF. Each guide runs cover, body, **Meet Marley**, works cited. The About page is
+identical in all three and mirrors the `#about` section of `index.html`, so edit both
+together. Do not hand-edit the PDFs; change the source and rebuild.
+
+They use the site's palette and both site typefaces. Body pages print on white on
+purpose: Chromium never paints the `@page` margin box, so a tinted body renders as a
+colour block floating on a white sheet. The colour is carried by the full-bleed cover
+and About page instead.
+
+Still worth doing before these are promoted anywhere:
+
+- **Rename guides two and three.** `v6` and `v2` are draft version numbers and they are
+  now permanent public URLs.
+- **Entries 9 and 10 in guide one** are listed by title because the source carried no
+  named author. Confirm them with Marley.
+
 ## Status
 
-Deployed and viewable, but not finished. Two things are still outstanding.
+The site is live and the download buttons work. Two things are still open.
 
-### 1. The three PDF guides are missing
+### 1. The page is still `noindex,nofollow`
 
-`thanks.html` links to three files that do not exist in this repo yet:
-
-| Expected path | Guide |
-| --- | --- |
-| `downloads/BPD_Overview.pdf` | Overview, Characteristics, and Causes |
-| `downloads/bpd_patient_guide_v6.pdf` | So You (Think You) Have BPD? |
-| `downloads/bpd_loved_ones_guide_v2.pdf` | So Someone You Love (Might Have) BPD? |
-
-Drop the files in at exactly those names and the buttons work with no code change. A review notice is currently shown on `thanks.html`; remove that block once the files land.
-
-Consider renaming `bpd_patient_guide_v6.pdf` and `bpd_loved_ones_guide_v2.pdf` before launch. Draft version numbers become permanent public URLs.
+Deliberate. The Arkansas citations below are not settled, and the page leads with those
+figures. Flip the robots meta in `index.html` once they are.
 
 ### 2. Two Arkansas sources need full citations
 
-The page now carries a numbered Works Cited section. Five of the seven entries are
-complete. Two are titles only, taken from Marley's research notes, and need her to
-supply publisher and date before launch:
+The page carries a numbered Works Cited section. Five of the seven entries are complete.
+Two are titles only, taken from Marley's research notes, and need her to supply publisher
+and date:
 
 - **[5]** Time Wellness Arkansas, *Arkansas mental health statistics*
 - **[6]** *Nearly one in three Arkansans report symptoms of depression*
 
-One claim is cited but still unverified against the source: **[7]** Guillen et al.
-(2024) on Family Connections reducing caregiver burden.
+One claim is cited but still unverified against the source: **[7]** Guillen et al. (2024)
+on Family Connections reducing caregiver burden.
 
-Every other figure on the page is confirmed verbatim against Marley's own research
-notes: the 5-of-9 criteria, the 5.9% vs 1.4% suicide rate, the 1980 DSM-III date,
-the 46th state ranking, the 1-in-4 and 1-in-3 Arkansas figures, and the ~125,000.
+Note that the guide PDFs cite a completely separate body of literature and contain none of
+the Arkansas figures, so they do not resolve this.
 
-The site is set to `noindex,nofollow` until the PDFs land. Flip the robots meta in
-`index.html` before launch.
+Every other figure on the page is confirmed verbatim against Marley's own research notes:
+the 5-of-9 criteria, the 5.9% vs 1.4% suicide rate, the 1980 DSM-III date, the 46th state
+ranking, the 1-in-4 and 1-in-3 Arkansas figures, and the ~125,000.
 
 ## Photography
 
@@ -60,7 +83,8 @@ The site is set to `noindex,nofollow` until the PDFs land. Flip the robots meta 
 | `images/marley.webp` | About section only | Marley's own portrait |
 | `images/hero-reading.webp` | Hero | Unsplash |
 | `images/home-family.webp` | "What it looks like at home" | Unsplash |
-| `images/change-friends.webp` | "What can actually change" | Unsplash |
+| `images/therapy-session.webp` | "What can actually change" | Marley, via Canva |
+| `images/family-hands.webp` | "Three free guides" band | Marley, via Canva |
 
 Unsplash photos are free for commercial use with no attribution required. All are
 converted to WebP and committed rather than hotlinked, so the page has no external
@@ -113,8 +137,9 @@ markup changes.
 ```
 index.html      Landing page
 thanks.html     Guide download page
-images/         marley.webp (hero and About portrait)
-downloads/      The three PDFs go here
+images/         Site photography, WebP
+downloads/      The three guide PDFs
+guide-src/      Source the PDFs are built from
 ```
 
 Plain static HTML with inline CSS. No build step, no dependencies.
