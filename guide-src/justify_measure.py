@@ -15,8 +15,13 @@ from PIL import Image
 PT_PER_IN = 72.0
 BOTTOM_MARGIN_IN = 0.75
 DPI = 50
-MAX_GAP = 96.0          # px at 96dpi, ceiling for any single gap
+MAX_GAP = 30.0          # px at 96dpi. Kept small on purpose: a big stretched gap
+                        # reads as a mistake, worse than the hole it was closing.
 MIN_SLACK = 24.0
+MAX_SLACK = 300.0       # Above this, the hole exists because a block would not fit.
+                        # Adding space then makes it WORSE: it eats the room the block
+                        # needed, pushing it off the page for good. Leave those alone
+                        # and report them; they need a content change, not spacing.
 
 norm = lambda s: re.sub(r'[^a-z0-9 ]', ' ', s.lower())
 squash = lambda s: re.sub(r'\s+', ' ', s).strip()
@@ -86,6 +91,10 @@ def main(pdf, blocks_path, out_path):
             report.append({'page': pi + 1, 'slack': round(slack_px), 'gaps': 0,
                            'each': 0, 'run_end': True})
             continue
+        if slack_px > MAX_SLACK:
+            report.append({'page': pi + 1, 'slack': round(slack_px), 'gaps': 0,
+                           'each': 0, 'too_big': True})
+            continue
         openable = [b for b in on_page[1:] if b['eligible']]
         if slack_px < MIN_SLACK or not openable:
             report.append({'page': pi + 1, 'slack': round(slack_px), 'gaps': 0, 'each': 0})
@@ -101,6 +110,9 @@ def main(pdf, blocks_path, out_path):
         if r['gaps']:
             note = f"  ({r['left']}px left over)" if r.get('left', 0) > 50 else ''
             print(f"   page {r['page']:>2}: {r['slack']:>4}px slack -> {r['gaps']} gaps x {r['each']}px{note}")
+        elif r.get('too_big'):
+            print(f"   page {r['page']:>2}: {r['slack']:>4}px slack, a block would not fit -- "
+                  f"left alone, needs a content change")
         elif r.get('run_end'):
             print(f"   page {r['page']:>2}: {r['slack']:>4}px slack, end of a run, left alone")
         elif r['slack'] > 80:

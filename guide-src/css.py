@@ -78,35 +78,38 @@ ol.crit li::before{ content:counter(c); position:absolute; left:0; top:0.5pt;
 .crisis li::marker{ color:var(--accent-dark-bg); }
 .crisis strong{ color:var(--on-dark); }
 
-figure{ margin:12pt 0; break-inside:avoid-page; }
+figure{ margin:10pt 0; break-inside:avoid-page; }
 figure img{ width:100%; display:block; border-radius:10pt; object-fit:cover; }
 figure.wide img{ height:1.85in; }
-figure.band img{ height:2.1in; }
-figure.tall{ width:3.4in; margin-left:auto; margin-right:auto; }
-figure.tall img{ height:3.4in; }
+figure.band img{ height:1.82in; }
+figure.tall{ width:2.85in; margin-left:auto; margin-right:auto; }
+figure.tall img{ height:2.85in; }
 figure.tall figcaption{ text-align:center; }
 figcaption{ font-size:8.4pt; color:var(--ink-soft); margin-top:5pt; font-style:italic; }
 
-/* ---------- about page ---------- */
+/* ---------- about page ----------
+   A full-height split rather than a column of content sitting at the top of an
+   otherwise empty sheet. The portrait runs the whole height of the left column,
+   the text sits centred in the right, so the page fills by design. */
 .about{ page:fullbleed; break-before:page; break-after:page;
   width:8.5in; height:11in; background:var(--bg-alt); overflow:hidden;
   display:flex; flex-direction:column; }
-.about-inner{ flex:1; padding:0.9in 0.8in 0.4in; display:flex; flex-direction:column; }
-.about-head{ margin-bottom:0.34in; }
-.about-head h2{ font-size:27pt; margin:0; }
-.about-grid{ display:flex; gap:0.42in; align-items:flex-start; }
-.about-photo{ width:2.5in; flex:none; border-radius:12pt; overflow:hidden;
-  box-shadow:0 14pt 30pt -14pt rgba(31,34,51,0.5); }
-.about-photo img{ width:100%; height:3.75in; object-fit:cover; display:block; }
-.about-body{ flex:1; }
-.about-body .name-line{ font-family:'Fraunces',serif; font-size:13pt; line-height:1.36;
-  color:var(--primary); font-weight:600; margin-bottom:9pt; }
-.about-body p{ font-size:10.6pt; }
-.about-quote{ margin-top:0.34in; padding-top:0.26in; border-top:1px solid var(--line); }
-.about-quote p{ font-family:'Fraunces',serif; font-size:12.4pt; line-height:1.48;
+.about-inner{ flex:1; display:flex; min-height:0; }
+.about-photo{ width:3.5in; flex:none; overflow:hidden; }
+.about-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+.about-body{ flex:1; padding:0.8in 0.7in 0.8in 0.62in;
+  display:flex; flex-direction:column; justify-content:center; }
+.about-body .kicker{ margin-bottom:5pt; }
+.about-body h2{ font-size:26pt; margin:0 0 9pt; }
+.about-body .name-line{ font-family:'Fraunces',serif; font-size:13.4pt; line-height:1.34;
+  color:var(--primary); font-weight:600; margin-bottom:10pt; }
+.about-body p{ font-size:10.7pt; line-height:1.62; }
+.about-quote{ margin-top:0.3in; padding-top:0.26in; border-top:1px solid var(--line); }
+.about-quote p{ font-family:'Fraunces',serif; font-size:12.2pt; line-height:1.46;
   color:var(--primary); margin:0; }
 .about-foot{ background:var(--primary-dk); color:var(--on-dark-soft);
-  padding:0.28in 0.8in; font-size:9pt; display:flex; justify-content:space-between; align-items:baseline; }
+  padding:0.28in 0.7in; font-size:9pt; display:flex; justify-content:space-between;
+  align-items:baseline; flex:none; }
 .about-foot .mark{ font-family:'Fraunces',serif; color:var(--on-dark); font-size:11pt; font-weight:600; }
 .about-foot .mark em{ font-style:normal; color:var(--accent-dark-bg); }
 
@@ -191,8 +194,9 @@ figcaption{ font-size:8.4pt; color:var(--ink-soft); margin-top:5pt; font-style:i
 
 
 /* ---------- drawn diagrams ---------- */
-figure.diagram{ margin:14pt 0 14pt; break-inside:avoid-page; }
+figure.diagram{ margin:10pt 0 12pt; break-inside:avoid-page; }
 figure.diagram svg{ width:100%; height:auto; display:block; }
+figure.diagram.compact{ max-width:6.1in; margin-left:auto; margin-right:auto; }
 figure.diagram figcaption{ font-size:8.4pt; color:var(--ink-soft); font-style:italic;
   margin-top:6pt; text-align:left; }
 .dg-title{ font-family:'Karla',sans-serif; font-size:8pt; font-weight:700;

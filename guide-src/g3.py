@@ -265,34 +265,31 @@ worth more than reaching level six once.</figcaption>
   thing that will not work. The reason is in the shape of the thing.</p>
 
 <figure class="diagram">
-<svg viewBox="0 0 680 292" role="img"
+<svg viewBox="0 0 680 214" role="img"
      aria-label="A schematic curve of distress rising steeply, holding at a peak, then falling slowly back to baseline. The peak is shaded and marked as the window where words do not land. Three zones beneath the axis say what to do in each.">
-  <rect x="150" y="26" width="204" height="184" fill="#A8432A" fill-opacity="0.09" rx="3"/>
-  <line x1="56"  y1="210" x2="662" y2="210" class="dg-axis"/>
-  <line x1="56"  y1="26"  x2="56"  y2="210" class="dg-axis"/>
-  <line x1="354" y1="210" x2="354" y2="232" class="dg-axis"/>
-  <line x1="530" y1="210" x2="530" y2="232" class="dg-axis"/>
-  <path d="M56,202 C110,198 140,66 196,48 C244,32 306,40 352,68 C412,104 452,152 520,176 C572,194 618,201 662,204"
+  <rect x="150" y="20" width="204" height="136" fill="#A8432A" fill-opacity="0.09" rx="3"/>
+  <line x1="56"  y1="156" x2="662" y2="156" class="dg-axis"/>
+  <line x1="56"  y1="20"  x2="56"  y2="156" class="dg-axis"/>
+  <line x1="354" y1="156" x2="354" y2="172" class="dg-axis"/>
+  <line x1="530" y1="156" x2="530" y2="172" class="dg-axis"/>
+  <path d="M56,150 C110,147 140,49 196,36 C244,24 306,30 352,50 C412,77 452,113 520,131 C572,144 618,149 662,151"
         fill="none" stroke="#2A3352" stroke-width="2.4" stroke-linecap="round"/>
-  <circle cx="252" cy="45" r="4.5" fill="#A8432A"/>
-  <text x="150" y="18" class="dg-title">Words do not land here</text>
+  <circle cx="252" cy="33" r="4.2" fill="#A8432A"/>
+  <text x="150" y="13" class="dg-title">Words do not land here</text>
 
-  <text x="62"  y="250" class="dg-lab-b">While it climbs</text>
-  <text x="62"  y="266" class="dg-lab">Fewer words. Offer something</text>
-  <text x="62"  y="280" class="dg-lab">physical. Do not explain.</text>
+  <text x="62"  y="190" class="dg-lab-b">While it climbs</text>
+  <text x="62"  y="205" class="dg-lab">Fewer words. Something physical.</text>
 
-  <text x="362" y="250" class="dg-lab-b">On the way down</text>
-  <text x="362" y="266" class="dg-lab">Validation lands here.</text>
-  <text x="362" y="280" class="dg-lab">They can hear you again.</text>
+  <text x="362" y="190" class="dg-lab-b">On the way down</text>
+  <text x="362" y="205" class="dg-lab">Validation lands here.</text>
 
-  <text x="538" y="250" class="dg-lab-b">Back at baseline</text>
-  <text x="538" y="266" class="dg-lab">Repair now,</text>
-  <text x="538" y="280" class="dg-lab">not before.</text>
+  <text x="538" y="190" class="dg-lab-b">Back at baseline</text>
+  <text x="538" y="205" class="dg-lab">Repair now, not before.</text>
 
-  <text x="48" y="118" text-anchor="middle" class="dg-muted" transform="rotate(-90 48 118)">Distress</text>
+  <text x="48" y="88" text-anchor="middle" class="dg-muted" transform="rotate(-90 48 88)">Distress</text>
 </svg>
-<figcaption>Schematic, not measured data. The shape is the point: distress climbs fast and
-comes down slowly, and the window where talking works opens on the way down, not at the top.</figcaption>
+<figcaption>Schematic, not measured data. Distress climbs fast and comes down slowly, and the
+window where talking works opens on the way down, not at the top.</figcaption>
 </figure>
   <p>So the order matters more than the words. Work down this list.</p>
 
