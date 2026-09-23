@@ -26,13 +26,19 @@ All three are in `downloads/` and live on the site. Direct links:
 | 2. So You (Think) You Have BPD? | `downloads/bpd_patient_guide_v6.pdf` | https://odyssey-jotun.github.io/understanding-bpd/downloads/bpd_patient_guide_v6.pdf |
 | 3. So Someone You Love (Might Have) BPD? | `downloads/bpd_loved_ones_guide_v2.pdf` | https://odyssey-jotun.github.io/understanding-bpd/downloads/bpd_loved_ones_guide_v2.pdf |
 
-Guide three is now twelve pages (expanded 2026-09-23). Guides one and two are six and
+Guide three is now thirteen pages (expanded 2026-09-23). Guides one and two are six and
 seven pages and have not been expanded yet. US Letter, 650KB to 1MB.
 
 Guide three carries the components the other two do not have yet: `.ladder` (the six
 levels of validation), `.script` (instead-of/try dialogue cards), `.flow` (the ordered
-decision steps), `.check` (the caregiver self-check) and `.twocol` panels. They all live
-in `guide-src/css.py` and are ready to reuse in the other two guides.
+decision steps), `.check` (the caregiver self-check), `.twocol` panels and `figure.diagram`
+(inline SVG). They all live in `guide-src/css.py` and are ready to reuse.
+
+The three drawn diagrams in guide three are hand-written inline SVG, not images, so
+they stay sharp at any zoom and cost nothing in file size. The indigo ramp on the
+validation staircase is an ordinal ramp: one hue, light to dark, checked for monotone
+lightness, step separation and contrast against white paper before use. The distress
+curve is labelled as a schematic on its face because it carries no measured data.
 
 ### How they are built
 

@@ -194,6 +194,21 @@ figcaption{ font-size:8.4pt; color:var(--ink-soft); margin-top:5pt; font-style:i
 .check li::before{ content:''; position:absolute; left:0; top:1.5pt;
   width:11pt; height:11pt; border:1.4pt solid var(--primary); border-radius:2.5pt; }
 
+
+/* ---------- drawn diagrams ---------- */
+figure.diagram{ margin:14pt 0 14pt; break-inside:avoid-page; }
+figure.diagram svg{ width:100%; height:auto; display:block; }
+figure.diagram figcaption{ font-size:8.4pt; color:var(--ink-soft); font-style:italic;
+  margin-top:6pt; text-align:left; }
+.dg-title{ font-family:'Karla',sans-serif; font-size:8pt; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; fill:var(--accent); }
+.dg-lab{ font-family:'Karla',sans-serif; font-size:11px; fill:#4A4F66; }
+.dg-lab-b{ font-family:'Karla',sans-serif; font-size:11.5px; font-weight:700; fill:#2A3352; }
+.dg-lab-w{ font-family:'Karla',sans-serif; font-size:11.5px; font-weight:700; fill:#F2EFE9; }
+.dg-num{ font-family:'Fraunces',serif; font-size:13px; font-weight:600; fill:#F2EFE9; }
+.dg-axis{ stroke:#1F2233; stroke-opacity:.30; stroke-width:1; }
+.dg-muted{ font-family:'Karla',sans-serif; font-size:10px; fill:#4A4F66; fill-opacity:.85; }
+
 </style></head><body>
 
 <div class="cover">

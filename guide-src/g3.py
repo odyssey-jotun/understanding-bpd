@@ -72,6 +72,36 @@ BODY = """
   enough to talk. Marsha Linehan, who developed DBT, sets it out as six levels, each one
   going further than the last.</p>
 
+
+<figure class="diagram">
+<svg viewBox="0 0 680 232" role="img"
+     aria-label="Six ascending steps, palest at the left and darkest at the right, showing the six levels of validation going progressively further.">
+  <g>
+    <rect x="6"   y="158" width="104" height="50"  rx="4" fill="#A2A9C0"/>
+    <rect x="118" y="134" width="104" height="74"  rx="4" fill="#8B93AE"/>
+    <rect x="230" y="110" width="104" height="98"  rx="4" fill="#74809C"/>
+    <rect x="342" y="86"  width="104" height="122" rx="4" fill="#5E6B8A"/>
+    <rect x="454" y="62"  width="104" height="146" rx="4" fill="#465478"/>
+    <rect x="566" y="38"  width="104" height="170" rx="4" fill="#2A3352"/>
+  </g>
+  <g class="dg-num" text-anchor="middle">
+    <text x="58"  y="184">1</text><text x="170" y="160">2</text><text x="282" y="136">3</text>
+    <text x="394" y="112">4</text><text x="506" y="88">5</text><text x="618" y="64">6</text>
+  </g>
+  <g class="dg-lab-b" text-anchor="middle">
+    <text x="58"  y="224">Be present</text>
+    <text x="170" y="224">Reflect back</text>
+    <text x="282" y="224">Name the unsaid</text>
+    <text x="394" y="224">Their history</text>
+    <text x="506" y="224">Right now</text>
+    <text x="618" y="224">Be real</text>
+  </g>
+  <text x="0" y="24" class="dg-title">Each one goes further than the last</text>
+</svg>
+<figcaption>You do not have to climb all six every time. Getting to level two reliably is
+worth more than reaching level six once.</figcaption>
+</figure>
+
   <div class="ladder">
     <div class="rung">
       <h4>Be present</h4>
@@ -220,7 +250,39 @@ BODY = """
   <h2>What to do, in order</h2>
   <div class="rule"></div>
   <p>In a high-distress moment your instinct will be to explain, and explaining is the one
-  thing that will not work. Work down this list instead.</p>
+  thing that will not work. The reason is in the shape of the thing.</p>
+
+<figure class="diagram">
+<svg viewBox="0 0 680 292" role="img"
+     aria-label="A schematic curve of distress rising steeply, holding at a peak, then falling slowly back to baseline. The peak is shaded and marked as the window where words do not land. Three zones beneath the axis say what to do in each.">
+  <rect x="150" y="26" width="204" height="184" fill="#A8432A" fill-opacity="0.09" rx="3"/>
+  <line x1="56"  y1="210" x2="662" y2="210" class="dg-axis"/>
+  <line x1="56"  y1="26"  x2="56"  y2="210" class="dg-axis"/>
+  <line x1="354" y1="210" x2="354" y2="232" class="dg-axis"/>
+  <line x1="530" y1="210" x2="530" y2="232" class="dg-axis"/>
+  <path d="M56,202 C110,198 140,66 196,48 C244,32 306,40 352,68 C412,104 452,152 520,176 C572,194 618,201 662,204"
+        fill="none" stroke="#2A3352" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="252" cy="45" r="4.5" fill="#A8432A"/>
+  <text x="150" y="18" class="dg-title">Words do not land here</text>
+
+  <text x="62"  y="250" class="dg-lab-b">While it climbs</text>
+  <text x="62"  y="266" class="dg-lab">Fewer words. Offer something</text>
+  <text x="62"  y="280" class="dg-lab">physical. Do not explain.</text>
+
+  <text x="362" y="250" class="dg-lab-b">On the way down</text>
+  <text x="362" y="266" class="dg-lab">Validation lands here.</text>
+  <text x="362" y="280" class="dg-lab">They can hear you again.</text>
+
+  <text x="538" y="250" class="dg-lab-b">Back at baseline</text>
+  <text x="538" y="266" class="dg-lab">Repair now,</text>
+  <text x="538" y="280" class="dg-lab">not before.</text>
+
+  <text x="48" y="118" text-anchor="middle" class="dg-muted" transform="rotate(-90 48 118)">Distress</text>
+</svg>
+<figcaption>Schematic, not measured data. The shape is the point: distress climbs fast and
+comes down slowly, and the window where talking works opens on the way down, not at the top.</figcaption>
+</figure>
+  <p>So the order matters more than the words. Work down this list.</p>
 
   <div class="flow">
     <div class="pair">
@@ -359,6 +421,45 @@ BODY = """
   <p class="kicker">Your own health</p>
   <h2>An honest check</h2>
   <div class="rule"></div>
+
+<figure class="diagram">
+<svg viewBox="0 0 680 246" role="img"
+     aria-label="Three columns dividing responsibility: theirs, yours, and their clinician's. The middle column, yours, is highlighted.">
+  <rect x="2"   y="26" width="212" height="196" rx="8" fill="none" stroke="#1F2233" stroke-opacity="0.22"/>
+  <rect x="234" y="26" width="212" height="196" rx="8" fill="#A8432A" fill-opacity="0.10" stroke="#A8432A" stroke-width="1.6"/>
+  <rect x="466" y="26" width="212" height="196" rx="8" fill="none" stroke="#1F2233" stroke-opacity="0.22"/>
+
+  <rect x="2"   y="26" width="212" height="30" rx="8" fill="#1F2233" fill-opacity="0.07"/>
+  <rect x="234" y="26" width="212" height="30" rx="8" fill="#A8432A"/>
+  <rect x="466" y="26" width="212" height="30" rx="8" fill="#1F2233" fill-opacity="0.07"/>
+
+  <text x="108" y="46" text-anchor="middle" class="dg-lab-b">Theirs</text>
+  <text x="340" y="46" text-anchor="middle" class="dg-lab-w">Yours</text>
+  <text x="572" y="46" text-anchor="middle" class="dg-lab-b">Their clinician&#8217;s</text>
+
+  <g class="dg-lab">
+    <text x="18" y="82">Whether they accept help</text>
+    <text x="18" y="104">Their own recovery</text>
+    <text x="18" y="126">What they say in a crisis</text>
+    <text x="18" y="148">Doing the work of therapy</text>
+
+    <text x="250" y="82">Staying steady</text>
+    <text x="250" y="104">Saying what you will do</text>
+    <text x="250" y="126">Keeping the limits you set</text>
+    <text x="250" y="148">Looking after yourself</text>
+    <text x="250" y="170">Calling 988 if it is needed</text>
+
+    <text x="482" y="82">Making the diagnosis</text>
+    <text x="482" y="104">Choosing the treatment</text>
+    <text x="482" y="126">Assessing risk</text>
+    <text x="482" y="148">Adjusting what is not working</text>
+  </g>
+  <text x="0" y="16" class="dg-title">What is actually yours to carry</text>
+  <text x="340" y="204" text-anchor="middle" class="dg-lab-b">The only column you can act on</text>
+</svg>
+<figcaption>Most of the exhaustion in supporting someone comes from working the first and
+third columns, where nothing you do can reach.</figcaption>
+</figure>
   <p>Caregiver strain is measurable and it creeps up slowly. Read these and count the ones
   that are true of the last month, not of your life in general.</p>
   <ul class="check">
