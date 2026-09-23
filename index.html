@@ -172,7 +172,7 @@
 
   section{ padding: 76px 0; }
   .band{ background: var(--bg-alt); }
-  .section-head{ max-width: 640px; margin-bottom: 40px; }
+  .section-head{ max-width: 640px; margin-bottom: 28px; }
   .section-head h2{ font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin-bottom: 14px; }
   .section-head p{ color: var(--ink-soft); font-size: 1.04rem; margin:0; }
 
@@ -280,8 +280,8 @@
   .about-text p.name-line{ color: var(--ink); font-weight: 600; font-size: 1.05rem; }
 
   /* ---------------- guides ---------------- */
-  .guides-intro{ grid-template-columns: 1.25fr 0.75fr; align-items: center; margin-bottom: 40px; }
-  .guides-intro .section-head{ margin-bottom: 0; }
+  .band-shot{ aspect-ratio: 3.2/1; margin-bottom: 32px; }
+  .band-shot img{ object-position: center 50%; }
   .guide-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .guide-card{
     background: var(--card);
@@ -484,15 +484,13 @@
 
 <section id="guides">
   <div class="wrap">
-    <div class="split guides-intro">
-      <div class="section-head">
-        <span class="eyebrow">Start here</span>
-        <h2>Three free guides</h2>
-        <p>Download the overview first. Then pick the second guide based on your seat at the table.</p>
-      </div>
-      <div class="shot wide">
-        <img src="images/family-hands.webp" width="800" height="800" alt="Adult and child hands cupped together, holding a paper cut-out of a family" loading="lazy" decoding="async">
-      </div>
+    <div class="section-head">
+      <span class="eyebrow">Start here</span>
+      <h2>Three free guides</h2>
+      <p>Download the overview first. Then pick the second guide based on your seat at the table.</p>
+    </div>
+    <div class="shot band-shot">
+      <img src="images/family-hands.webp" width="800" height="800" alt="Adult and child hands cupped together, holding a paper cut-out of a family" loading="lazy" decoding="async">
     </div>
     <div class="guide-grid">
       <div class="guide-card">
