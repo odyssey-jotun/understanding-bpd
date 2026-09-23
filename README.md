@@ -34,6 +34,10 @@ levels of validation), `.script` (instead-of/try dialogue cards), `.flow` (the o
 decision steps), `.check` (the caregiver self-check), `.twocol` panels and `figure.diagram`
 (inline SVG). They all live in `guide-src/css.py` and are ready to reuse.
 
+Band photographs must be generated at **1200x317**, which is exactly the 6.9in by 1.82in
+the band renders at. Supply a different ratio and `object-fit: cover` crops the difference
+out of the middle, which is how two photographs ended up with the subjects' heads cut off.
+
 The three drawn diagrams in guide three are hand-written inline SVG, not images, so
 they stay sharp at any zoom and cost nothing in file size. The indigo ramp on the
 validation staircase is an ordinal ramp: one hue, light to dark, checked for monotone
@@ -98,7 +102,7 @@ ranking, the 1-in-4 and 1-in-3 Arkansas figures, and the ~125,000.
 | `images/therapy-session.webp` | "What can actually change" | Marley, via Canva |
 | `images/family-hands.webp` | "Three free guides" band | Marley, via Canva |
 | `guide-src/img/p-raising.jpg` | Guide 3, raising the subject | Unsplash `DVoh8VY4NTQ` |
-| `guide-src/img/p-listening.jpg` | Guide 3, validation | Unsplash `photo-1654608958160` |
+| `guide-src/img/p-listening.jpg` | Guide 3, validation | Unsplash `kFEb8yigiuQ` |
 | `guide-src/img/p-calling.jpg` | Guide 3, crisis section | Unsplash `v8UNH7LCDko` |
 | `guide-src/img/p-stepping.jpg` | Guide 3, boundaries | Unsplash `tvbjFMHQ2AE` |
 

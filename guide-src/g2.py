@@ -93,7 +93,7 @@ BODY = """
     <h3>If you need help right now</h3>
     <ul>
       <li><strong>988 Suicide &amp; Crisis Lifeline.</strong> Call or text <strong>988</strong>.
-      Free and confidential, 24/7 in the US and Canada.</li>
+      Free and confidential, 24/7.</li>
       <li><strong>Crisis Text Line.</strong> Text <strong>HOME</strong> to <strong>741741</strong>
       to reach a crisis counselor, 24/7.</li>
       <li><strong>The Trevor Project</strong> (LGBTQ youth). Call <strong>866-488-7386</strong>
