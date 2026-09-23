@@ -192,6 +192,7 @@
   .shot img{ display:block; width:100%; height:100%; object-fit: cover; }
   .shot.tall{ aspect-ratio: 4/5; }
   .shot.wide{ aspect-ratio: 3/2; }
+  .shot.square{ aspect-ratio: 1/1; }
 
   /* ---------------- hero ---------------- */
   .hero{ padding: 80px 0 72px; }
@@ -279,6 +280,8 @@
   .about-text p.name-line{ color: var(--ink); font-weight: 600; font-size: 1.05rem; }
 
   /* ---------------- guides ---------------- */
+  .guides-intro{ grid-template-columns: 1.25fr 0.75fr; align-items: center; margin-bottom: 40px; }
+  .guides-intro .section-head{ margin-bottom: 0; }
   .guide-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .guide-card{
     background: var(--card);
@@ -481,10 +484,15 @@
 
 <section id="guides">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Start here</span>
-      <h2>Three free guides</h2>
-      <p>Download the overview first. Then pick the second guide based on your seat at the table.</p>
+    <div class="split guides-intro">
+      <div class="section-head">
+        <span class="eyebrow">Start here</span>
+        <h2>Three free guides</h2>
+        <p>Download the overview first. Then pick the second guide based on your seat at the table.</p>
+      </div>
+      <div class="shot wide">
+        <img src="images/family-hands.webp" width="800" height="800" alt="Adult and child hands cupped together, holding a paper cut-out of a family" loading="lazy" decoding="async">
+      </div>
     </div>
     <div class="guide-grid">
       <div class="guide-card">
@@ -521,8 +529,8 @@
       <p class="caps-line">You are not responsible for regulating someone else's emotions.</p>
       <p>You are in a position to understand it better than you did five minutes ago. Start with the overview above.</p>
     </div>
-    <div class="shot wide">
-      <img src="images/change-friends.webp" width="1200" height="801" alt="Two friends sitting on a sofa, laughing together in conversation" loading="lazy" decoding="async">
+    <div class="shot square">
+      <img src="images/therapy-session.webp" width="800" height="800" alt="A therapist writing on a notepad while a client, seated opposite, talks with open hands" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
