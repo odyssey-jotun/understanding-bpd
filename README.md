@@ -26,7 +26,7 @@ All three are in `downloads/` and live on the site. Direct links:
 | 2. So You (Think) You Have BPD? | `downloads/bpd_patient_guide_v6.pdf` | https://odyssey-jotun.github.io/understanding-bpd/downloads/bpd_patient_guide_v6.pdf |
 | 3. So Someone You Love (Might Have) BPD? | `downloads/bpd_loved_ones_guide_v2.pdf` | https://odyssey-jotun.github.io/understanding-bpd/downloads/bpd_loved_ones_guide_v2.pdf |
 
-Guide three is now thirteen pages (expanded 2026-09-23). Guides one and two are six and
+Guide three is now fifteen pages (expanded 2026-09-23). Guides one and two are six and
 seven pages and have not been expanded yet. US Letter, 650KB to 1MB.
 
 Guide three carries the components the other two do not have yet: `.ladder` (the six
@@ -97,6 +97,10 @@ ranking, the 1-in-4 and 1-in-3 Arkansas figures, and the ~125,000.
 | `images/home-family.webp` | "What it looks like at home" | Unsplash |
 | `images/therapy-session.webp` | "What can actually change" | Marley, via Canva |
 | `images/family-hands.webp` | "Three free guides" band | Marley, via Canva |
+| `guide-src/img/p-raising.jpg` | Guide 3, raising the subject | Unsplash `DVoh8VY4NTQ` |
+| `guide-src/img/p-listening.jpg` | Guide 3, validation | Unsplash `photo-1654608958160` |
+| `guide-src/img/p-calling.jpg` | Guide 3, crisis section | Unsplash `v8UNH7LCDko` |
+| `guide-src/img/p-stepping.jpg` | Guide 3, boundaries | Unsplash `tvbjFMHQ2AE` |
 
 Unsplash photos are free for commercial use with no attribution required. All are
 converted to WebP and committed rather than hotlinked, so the page has no external

@@ -44,6 +44,12 @@ BODY = """
   Dialectical Behavior Therapy directly can sometimes trigger defensive reactions or fears of
   rejection if it is not approached thoughtfully. You might consider these strategies when
   opening a conversation.</p>
+<figure class="band">
+  <img src="img/p-raising.jpg" alt="Two women sitting together at a table, one speaking and one listening carefully">
+  <figcaption>Pick the moment, not just the words. The same sentence lands differently on a
+  calm afternoon than it does an hour after a row.</figcaption>
+</figure>
+
   <ul>
     <li><strong>Choose a calm moment.</strong> You might wait to bring up therapy when both of
     you are feeling relaxed and grounded, rather than during or immediately after an emotional
@@ -72,6 +78,12 @@ BODY = """
   enough to talk. Marsha Linehan, who developed DBT, sets it out as six levels, each one
   going further than the last.</p>
 
+
+<figure class="band">
+  <img src="img/p-listening.jpg" alt="Two adults sitting facing each other in a warmly lit room, one leaning in to listen while the other talks">
+  <figcaption>Levels one and two, which is most of the work: stay in the room, and say back
+  what you actually heard.</figcaption>
+</figure>
 
 <figure class="diagram">
 <svg viewBox="0 0 680 232" role="img"
@@ -323,7 +335,13 @@ comes down slowly, and the window where talking works opens on the way down, not
     </div>
   </div>
 </section>
-<section class="block">
+<section class="block loose">
+<figure class="tall">
+  <img src="img/p-calling.jpg" alt="A woman outdoors making a phone call, listening intently">
+  <figcaption>Calling 988 about somebody else is a normal use of it. You do not have to be
+  the person in crisis to ring them.</figcaption>
+</figure>
+
   <div class="crisis">
     <h3>If they are in immediate danger</h3>
     <p>Recurrent suicidal behavior and self-harm are part of the diagnostic picture for BPD.
@@ -379,6 +397,12 @@ comes down slowly, and the window where talking works opens on the way down, not
       the only person you lean on, and I don't want to be the reason you don't get better
       help.&rdquo;</p></div>
   </div>
+
+<figure class="tall">
+  <img src="img/p-stepping.jpg" alt="A woman walking along a tree-lined path, composed, taking time to herself">
+  <figcaption>Stepping away for fifteen minutes is not abandoning anyone, as long as you
+  said you were going and you come back when you said you would.</figcaption>
+</figure>
 
   <div class="callout">
     <p class="lead">A boundary you do not keep is worse than no boundary at all.</p>
@@ -460,8 +484,9 @@ comes down slowly, and the window where talking works opens on the way down, not
 <figcaption>Most of the exhaustion in supporting someone comes from working the first and
 third columns, where nothing you do can reach.</figcaption>
 </figure>
-  <p>Caregiver strain is measurable and it creeps up slowly. Read these and count the ones
-  that are true of the last month, not of your life in general.</p>
+  <p>These are prompts, not a test. They are not a screening instrument and they do not
+  score anything. Read them slowly and notice which ones are true of the last month rather
+  than of your life in general.</p>
   <ul class="check">
     <li>I have cancelled my own plans more than twice because of a crisis at home.</li>
     <li>I pick up my phone with a feeling of dread.</li>
@@ -472,16 +497,21 @@ third columns, where nothing you do can reach.</figcaption>
     <li>I believe that if I stopped doing this, they would not survive it.</li>
   </ul>
   <div class="callout">
-    <p class="lead">Three or more is worth taking to someone.</p>
-    <p>The last one especially. Believing you are the thing keeping another person alive is
-    the point at which you need support of your own, not more resolve. That belief is also
-    usually not true, and carrying it will eventually make you less use to the person you
-    are trying to help, not more.</p>
+    <p class="lead">The last one is the one to take to someone.</p>
+    <p>Believing you are the thing keeping another person alive is the point at which you
+    need support of your own, not more resolve. That belief is also usually not true, and
+    carrying it will eventually make you less use to the person you are trying to help,
+    not more.</p>
+    <p>Caregiver burden is genuinely measurable, but not by a list like this one. Clinicians
+    use validated instruments such as the Zarit Burden Interview. If several of these ring
+    true, that is a reason to talk to your own doctor or therapist, who can use a real
+    measure rather than a page in a leaflet.</p>
   </div>
 </section>
 """
 
 REFS = [
+ 'Zarit, S. H., Reever, K. E., &amp; Bach-Peterson, J. (1980). Relatives of the impaired elderly: correlates of feelings of burden. <em>The Gerontologist, 20</em>(6), 649-655. The Zarit Burden Interview is the validated measure referred to in the self-check section; the prompts in this guide are not a version of it.',
  'Linehan, M. M. (1997). Validation and psychotherapy. In A. Bohart &amp; L. Greenberg (Eds.), <em>Empathy Reconsidered.</em> American Psychological Association. The six levels of validation are summarised for families by NAMI at namimidhudson.org/resources/validation/',
  'Chapon, F., et al. (2018). Dialectical behavior therapy as treatment for borderline personality disorder. pmc.ncbi.nlm.nih.gov/articles/PMC6007584/',
  'Australian BPD Foundation. (2024). <em>Diagnostic criteria for Borderline Personality Disorder.</em> bpdfoundation.org.au/diagnostic-criteria.php',
