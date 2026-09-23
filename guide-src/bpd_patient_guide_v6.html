@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>So You (Think) You Have BPD?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: letter; margin: 0.85in 0.8in 0.75in 0.8in; }
+@page fullbleed { margin: 0; }
+:root{
+  --bg:#F7F4EF; --bg-alt:#EBE6DC; --card:#FFFFFF;
+  --ink:#1F2233; --ink-soft:#4A4F66;
+  --primary:#2A3352; --primary-dk:#161B2E;
+  --accent:#A8432A; --on-dark:#F2EFE9; --on-dark-soft:#C9CBD8;
+  --accent-dark-bg:#E9A18A; --line:rgba(31,34,51,0.16);
+}
+*{ box-sizing:border-box; }
+/* Body pages print on white. Chromium never paints the @page margin box,
+   so a tinted body would show as a colour block floating on white paper.
+   The brand carries on these pages through type, rules and callouts; the
+   full-bleed cover and About page supply the colour. */
+html{ background:#FFFFFF; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family:'Karla',system-ui,sans-serif;
+  color:var(--ink); background:#FFFFFF;
+  font-size:10.6pt; line-height:1.62;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+h1,h2,h3,.display{ font-family:'Fraunces',Georgia,serif; font-weight:600; color:var(--primary); }
+p{ margin:0 0 9pt; }
+strong{ font-weight:700; color:var(--ink); }
+
+/* ---------- full-bleed cover ---------- */
+.cover{ page:fullbleed; break-after:page; width:8.5in; height:11in;
+  background:var(--primary-dk); color:var(--on-dark);
+  display:flex; flex-direction:column; overflow:hidden; }
+.cover-top{ padding:0.78in 0.8in 0.34in; }
+.cover .wordmark{ font-family:'Fraunces',serif; font-size:13pt; font-weight:600;
+  color:var(--on-dark); letter-spacing:.01em; margin:0 0 0.42in; }
+.cover .wordmark em{ font-style:normal; color:var(--accent-dark-bg); }
+.cover .kicker{ font-family:'Karla',sans-serif; font-size:8.6pt; font-weight:700;
+  letter-spacing:.17em; text-transform:uppercase; color:var(--accent-dark-bg); margin:0 0 11pt; }
+.cover h1{ color:var(--on-dark); font-size:33pt; line-height:1.1; margin:0 0 12pt; letter-spacing:-0.01em; }
+.cover .sub{ color:var(--on-dark-soft); font-size:11.6pt; line-height:1.5; margin:0; max-width:5.5in; }
+.cover-img{ flex:1; position:relative; overflow:hidden; }
+.cover-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+.cover-foot{ padding:0.24in 0.8in 0.5in; display:flex; justify-content:space-between;
+  align-items:baseline; border-top:1px solid rgba(242,239,233,0.16); }
+.cover-foot .by{ font-size:10pt; color:var(--on-dark); font-weight:600; }
+.cover-foot .site{ font-size:8.6pt; color:var(--on-dark-soft); letter-spacing:.05em; }
+
+/* ---------- body ---------- */
+.kicker{ font-family:'Karla',sans-serif; font-size:8.2pt; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:0 0 5pt;
+  break-after:avoid-page; }
+h2{ font-size:16.5pt; line-height:1.2; margin:0 0 7pt; break-after:avoid-page; }
+h3{ font-size:11.4pt; line-height:1.3; margin:13pt 0 4pt; color:var(--primary); break-after:avoid-page; }
+section.block{ margin-bottom:17pt; break-inside:avoid-page; }
+section.block.loose{ break-inside:auto; }
+.rule{ height:2.5pt; width:42pt; background:var(--accent); border-radius:2pt; margin:0 0 10pt;
+  break-after:avoid-page; }
+
+ul,ol{ margin:0 0 9pt; padding-left:15pt; }
+li{ margin-bottom:5pt; }
+li::marker{ color:var(--accent); }
+ol.crit{ padding-left:0; list-style:none; counter-reset:c; }
+ol.crit li{ counter-increment:c; position:relative; padding-left:24pt; margin-bottom:6pt; }
+ol.crit li::before{ content:counter(c); position:absolute; left:0; top:0.5pt;
+  width:16pt; height:16pt; border-radius:50%; background:var(--primary); color:var(--on-dark);
+  font-family:'Fraunces',serif; font-size:8.4pt; font-weight:600;
+  display:flex; align-items:center; justify-content:center; }
+
+.callout{ background:var(--bg-alt); border-left:3pt solid var(--accent);
+  padding:11pt 14pt; border-radius:0 8pt 8pt 0; margin:0 0 12pt; break-inside:avoid-page; }
+.callout p:last-child{ margin-bottom:0; }
+.callout .lead{ font-family:'Fraunces',serif; font-size:11.4pt; color:var(--primary); font-weight:600; margin-bottom:5pt; }
+
+.crisis{ background:var(--primary-dk); color:var(--on-dark); border-radius:10pt;
+  padding:14pt 16pt; margin:2pt 0 12pt; break-inside:avoid-page; }
+.crisis h3{ color:var(--on-dark); margin:0 0 7pt; font-size:12pt; }
+.crisis p, .crisis li{ color:var(--on-dark-soft); }
+.crisis ul{ margin:0; padding-left:13pt; }
+.crisis li::marker{ color:var(--accent-dark-bg); }
+.crisis strong{ color:var(--on-dark); }
+
+figure{ margin:12pt 0; break-inside:avoid-page; }
+figure img{ width:100%; display:block; border-radius:10pt; object-fit:cover; }
+figure.wide img{ height:1.85in; }
+figure.tall{ width:3.4in; margin-left:auto; margin-right:auto; }
+figure.tall img{ height:3.4in; }
+figure.tall figcaption{ text-align:center; }
+figcaption{ font-size:8.4pt; color:var(--ink-soft); margin-top:5pt; font-style:italic; }
+
+/* ---------- about page ---------- */
+.about{ page:fullbleed; break-before:page; break-after:page;
+  width:8.5in; height:11in; background:var(--bg-alt); overflow:hidden;
+  display:flex; flex-direction:column; }
+.about-inner{ flex:1; padding:0.9in 0.8in 0.4in; display:flex; flex-direction:column; }
+.about-head{ margin-bottom:0.34in; }
+.about-head h2{ font-size:27pt; margin:0; }
+.about-grid{ display:flex; gap:0.42in; align-items:flex-start; }
+.about-photo{ width:2.5in; flex:none; border-radius:12pt; overflow:hidden;
+  box-shadow:0 14pt 30pt -14pt rgba(31,34,51,0.5); }
+.about-photo img{ width:100%; height:3.75in; object-fit:cover; display:block; }
+.about-body{ flex:1; }
+.about-body .name-line{ font-family:'Fraunces',serif; font-size:13pt; line-height:1.36;
+  color:var(--primary); font-weight:600; margin-bottom:9pt; }
+.about-body p{ font-size:10.6pt; }
+.about-quote{ margin-top:0.34in; padding-top:0.26in; border-top:1px solid var(--line); }
+.about-quote p{ font-family:'Fraunces',serif; font-size:12.4pt; line-height:1.48;
+  color:var(--primary); margin:0; }
+.about-foot{ background:var(--primary-dk); color:var(--on-dark-soft);
+  padding:0.28in 0.8in; font-size:9pt; display:flex; justify-content:space-between; align-items:baseline; }
+.about-foot .mark{ font-family:'Fraunces',serif; color:var(--on-dark); font-size:11pt; font-weight:600; }
+.about-foot .mark em{ font-style:normal; color:var(--accent-dark-bg); }
+
+/* ---------- works cited ---------- */
+.refs{ break-before:page; }
+.refs h2{ font-size:15pt; }
+.refs ol{ padding-left:14pt; }
+.refs li{ font-size:8.9pt; line-height:1.5; color:var(--ink-soft); margin-bottom:6pt; }
+.refs li::marker{ color:var(--accent); font-weight:700; }
+.refs a{ color:var(--ink-soft); word-break:break-all; text-decoration:none; }
+.note{ font-size:8.6pt; color:var(--ink-soft); font-style:italic; margin-top:12pt;
+  padding-top:8pt; border-top:1px solid var(--line); }
+
+/* ---------- expansion components ---------- */
+.lede{ font-family:'Fraunces',Georgia,serif; font-size:12.6pt; line-height:1.5;
+  color:var(--primary); margin:0 0 12pt; }
+
+.twocol{ display:flex; gap:16pt; margin:0 0 12pt; break-inside:avoid-page; }
+.twocol > div{ flex:1; }
+.panel{ background:var(--bg-alt); border-radius:9pt; padding:11pt 13pt; }
+.panel h4{ font-family:'Fraunces',serif; font-size:10.6pt; color:var(--primary);
+  margin:0 0 5pt; font-weight:600; }
+.panel ul{ margin:0; padding-left:12pt; }
+.panel li{ font-size:9.8pt; margin-bottom:3.5pt; }
+
+/* instead-of / try script cards */
+.script{ border:1px solid var(--line); border-radius:9pt; padding:11pt 13pt;
+  margin:0 0 10pt; break-inside:avoid-page; }
+.script .sit{ font-family:'Fraunces',serif; font-size:10.8pt; font-weight:600;
+  color:var(--primary); margin:0 0 7pt; }
+.script .line{ padding-left:11pt; margin:0 0 6pt; border-left:2.5pt solid var(--line); }
+.script .line:last-child{ margin-bottom:0; }
+.script .no{ border-left-color:var(--accent); }
+.script .yes{ border-left-color:var(--primary); }
+.script .tag{ font-family:'Karla',sans-serif; font-size:7.6pt; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; display:block; margin-bottom:2pt; }
+.script .no .tag{ color:var(--accent); }
+.script .yes .tag{ color:var(--primary); }
+.script .say{ font-size:10pt; line-height:1.5; margin:0; }
+.script .yes .say{ font-weight:500; }
+.script .why{ font-size:8.8pt; color:var(--ink-soft); font-style:italic; margin:5pt 0 0; }
+
+/* numbered ladder */
+.ladder{ counter-reset:rung; margin:0 0 12pt; }
+.rung{ counter-increment:rung; position:relative; padding-left:30pt;
+  padding-bottom:11pt; break-inside:avoid-page; }
+.rung::before{ content:counter(rung); position:absolute; left:0; top:0;
+  width:19pt; height:19pt; border-radius:50%; background:var(--primary);
+  color:var(--on-dark); font-family:'Fraunces',serif; font-size:9.4pt; font-weight:600;
+  display:flex; align-items:center; justify-content:center; }
+.rung::after{ content:''; position:absolute; left:9pt; top:19pt; bottom:0;
+  width:1px; background:var(--line); }
+.rung:last-child{ padding-bottom:0; }
+.rung:last-child::after{ display:none; }
+.rung h4{ font-family:'Fraunces',serif; font-size:10.8pt; color:var(--primary);
+  margin:1pt 0 3pt; font-weight:600; }
+.rung p{ font-size:9.9pt; margin:0 0 3pt; }
+.rung .say{ font-size:9.9pt; color:var(--primary); font-style:italic;
+  background:var(--bg-alt); padding:5pt 9pt; border-radius:6pt; margin:4pt 0 0; }
+
+/* decision flow */
+.flow{ margin:0 0 12pt; }
+.pair{ break-inside:avoid-page; margin-bottom:5pt; }
+.pair .step{ margin-bottom:5pt; }
+.step{ border-radius:9pt; padding:9pt 12pt; margin:0 0 5pt; break-inside:avoid-page; }
+.step.q{ background:var(--primary); color:var(--on-dark); }
+.step.q p{ color:var(--on-dark); margin:0; font-weight:600; font-size:10.2pt; }
+.step.a{ background:var(--bg-alt); margin-left:22pt; }
+.step.a p{ margin:0; font-size:9.9pt; }
+.step.a .label{ font-family:'Karla',sans-serif; font-size:7.6pt; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--accent); display:block;
+  margin-bottom:2pt; }
+.step.stop{ background:var(--accent); color:#FFF; margin-left:22pt; }
+.step.stop p, .step.stop .label{ color:#FFF; }
+
+/* self-check list */
+.check{ margin:0 0 10pt; padding:0; list-style:none; }
+.check li{ position:relative; padding-left:20pt; margin-bottom:6pt; font-size:10pt;
+  break-inside:avoid-page; }
+.check li::before{ content:''; position:absolute; left:0; top:1.5pt;
+  width:11pt; height:11pt; border:1.4pt solid var(--primary); border-radius:2.5pt; }
+
+</style></head><body>
+
+<div class="cover">
+  <div class="cover-top">
+    <p class="wordmark">Understanding <em>BPD</em></p>
+    <p class="kicker">Guide two of three</p>
+    <h1>So You (Think) You Have BPD?</h1>
+    <p class="sub">Therapy options, the skills that underpin them, and where to turn when things get hard. Written for the person living it.</p>
+  </div>
+  <div class="cover-img"><img src="img/3.jpg" alt=""></div>
+  <div class="cover-foot">
+    <span class="by">Marley Spraggins</span>
+    <span class="site">odyssey-jotun.github.io/understanding-bpd</span>
+  </div>
+</div>
+<section class="block loose">
+  <p class="kicker">Section one</p>
+  <h2>Exploring therapy options</h2>
+  <div class="rule"></div>
+  <p>If you find yourself navigating intense, fast-shifting emotions, worrying about being
+  abandoned, or feeling unsure about your sense of self, you might consider looking into
+  borderline personality disorder. While these experiences can feel overwhelming at times, you
+  might find comfort in knowing that BPD responds very well to practical, structured therapies
+  designed to help you regain balance and feel more grounded.</p>
+  <p>You might want to start by exploring <strong>Dialectical Behavior Therapy (DBT)</strong>,
+  which was created specifically to help manage BPD symptoms. The core idea of
+  &ldquo;dialectics&rdquo; is about finding a balance between two concepts: accepting where you
+  are right now, while gently trying out new and healthier ways to cope.</p>
+  <h3>The four DBT skill areas</h3>
+  <ul>
+    <li><strong>Core mindfulness.</strong> You might practice observing, describing, and
+    engaging in the current moment without judging yourself. Bringing awareness to the present
+    can help anchor you when feelings start running high.</li>
+    <li><strong>Distress tolerance.</strong> You could try these practical tools to get through
+    intense emotional moments without making things harder on yourself or turning to self-harm.
+    They offer gentle ways to soothe yourself, take a break from stress, and accept difficult
+    situations step by step.</li>
+    <li><strong>Emotion regulation.</strong> Consider using these techniques to help you name
+    what you are feeling, spot your emotional triggers, and make strong emotional reactions feel
+    a bit more manageable.</li>
+    <li><strong>Interpersonal effectiveness.</strong> You might use these strategies when you
+    want to express your needs, set clear boundaries, or say no while protecting your
+    self-respect and your relationships.</li>
+  </ul>
+</section>
+
+<section class="block loose">
+  <p class="kicker">Section two</p>
+  <h2>Experimenting with distress tolerance</h2>
+  <div class="rule"></div>
+  <p>Trying out distress tolerance skills in your daily routine can help break loops of
+  overthinking, release tension in your body, and bring back mental clarity when stress peaks.
+  Here are a few ways you might consider approaching them.</p>
+  <h3>Matching skills to how you feel</h3>
+  <ul>
+    <li><strong>Low to moderate stress.</strong> Subtle options like mindfulness practice, calm
+    breathing exercises, or light emotional check-ins can work nicely.</li>
+    <li><strong>High distress and crisis.</strong> If you feel extremely overwhelmed, you might
+    consider engaging strong physical senses, such as holding an ice cube, tasting something
+    sour, or using temperature shifts, to help reset your nervous system and bring your
+    attention back to the present.</li>
+  </ul>
+  <h3>Giving yourself time to adjust</h3>
+  <ul>
+    <li><strong>Initial awkwardness is normal.</strong> You might experience some pushback or
+    feel awkward when trying these tools for the first time, which is completely natural. It
+    often takes a bit of gentle trial and error to see which skills feel right for you.</li>
+    <li><strong>Practice in calm moments.</strong> You might find it helpful to practice when you
+    are feeling settled, making it much easier to lean on these tools automatically when things
+    get tough.</li>
+  </ul>
+</section>
+
+<section class="block loose">
+  <p class="kicker">Section three</p>
+  <h2>Other pathways to consider</h2>
+  <div class="rule"></div>
+  <p>Beyond DBT, you might also want to look into other well-supported therapy approaches to see
+  if one aligns better with your personal needs.</p>
+  <ul>
+    <li><strong>Schema Therapy.</strong> You might explore this approach if you want to look at
+    deeper patterns from earlier in life, especially if you are working through past trauma or
+    PTSD.</li>
+    <li><strong>Mentalization-Based Treatment.</strong> You could consider this if you would like
+    to get better at reading your own feelings and understanding other people's intentions,
+    helping create space between an emotion and your reaction.</li>
+    <li><strong>Transference-Focused Psychotherapy.</strong> You might look into this option to
+    work closely with a therapist on relationship patterns in the moment, helping build a
+    stronger sense of identity.</li>
+    <li><strong>Brief DBT programs.</strong> If long-term programs feel out of reach, you might
+    consider shorter skills groups, under sixteen weeks, to learn practical coping tools.</li>
+  </ul>
+</section>
+
+<figure class="tall">
+  <img src="img/5.jpg" alt="A young person sitting curled up on a sofa with their head resting on their arms">
+  <figcaption>Hard days do not undo the work. Recovery in the research is measured over months
+  and years, not over a single afternoon.</figcaption>
+</figure>
+
+<section class="block loose">
+  <p class="kicker">Section four</p>
+  <h2>Resources and crisis support</h2>
+  <div class="rule"></div>
+  <div class="crisis">
+    <h3>If you need help right now</h3>
+    <ul>
+      <li><strong>988 Suicide &amp; Crisis Lifeline.</strong> Call or text <strong>988</strong>.
+      Free and confidential, 24/7 in the US and Canada.</li>
+      <li><strong>Crisis Text Line.</strong> Text <strong>HOME</strong> to <strong>741741</strong>
+      to reach a crisis counselor, 24/7.</li>
+      <li><strong>The Trevor Project</strong> (LGBTQ youth). Call <strong>866-488-7386</strong>
+      or text <strong>START</strong> to <strong>678-678</strong>, 24/7.</li>
+    </ul>
+  </div>
+  <h3>Learning more and finding people</h3>
+  <ul>
+    <li><strong>National Education Alliance for Borderline Personality Disorder.</strong>
+    Educational materials, webinars, and information on evidence-based BPD resources.</li>
+    <li><strong>Emotions Matter.</strong> A non-profit advocating for BPD awareness and offering
+    peer support groups.</li>
+    <li><strong>International Society for the Study of Personality Disorders.</strong> Clinical
+    and educational information about personality disorders.</li>
+  </ul>
+  <div class="callout">
+    <p class="lead">This guide is not a diagnosis.</p>
+    <p>Only a qualified clinician can diagnose BPD, and recognizing yourself in a list of
+    criteria is not the same as meeting them. What this guide can do is give you the vocabulary
+    to describe what you are experiencing to someone who can help.</p>
+  </div>
+</section>
+
+<div class="about">
+  <div class="about-inner">
+    <div class="about-head">
+      <p class="kicker">About the guide</p>
+      <h2>Meet Marley</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="img/marley.jpg" alt="Marley Spraggins, standing outdoors at golden hour, smiling">
+      </div>
+      <div class="about-body">
+        <p class="name-line">This project started with one family trying to make sense of a diagnosis.</p>
+        <p>Marley grew up inside a family where emotions ran high and nobody had a word for why.
+        That question led her to spend a summer buried in clinical research on borderline
+        personality disorder, and to build this series of guides for other families doing the
+        same thing hers did.</p>
+        <p>Each guide is written from the peer-reviewed literature rather than from anecdote,
+        and every claim is traceable to the sources listed at the back. They are free, and they
+        are meant to be shared with the people who need them.</p>
+      </div>
+    </div>
+    <div class="about-quote">
+      <p>&ldquo;Nobody in my family had the language for what was happening. These guides are
+      the thing I wish someone had handed us.&rdquo;</p>
+    </div>
+  </div>
+  <div class="about-foot">
+    <span class="mark">Understanding <em>BPD</em></span>
+    <span>All three guides are free at odyssey-jotun.github.io/understanding-bpd</span>
+  </div>
+</div>
+
+<section class="refs">
+  <p class="kicker">Sources</p>
+  <h2>Works cited</h2>
+  <div class="rule"></div>
+  <ol>
+    <li>Chapon, F., et al. (2018). Dialectical behavior therapy as treatment for borderline personality disorder. pmc.ncbi.nlm.nih.gov/articles/PMC6007584/</li>
+    <li>Crisis Text Line. (2024). <em>Free 24/7 crisis support via text.</em> crisistextline.org</li>
+    <li>Australian BPD Foundation. (2024). <em>Diagnostic criteria for Borderline Personality Disorder.</em> bpdfoundation.org.au/diagnostic-criteria.php</li>
+    <li>Emotions Matter. (2024). <em>BPD advocacy and peer support resources.</em> emotionsmatterbpd.org</li>
+    <li>Flesch, E., et al. (2021). How do patients with borderline personality disorder experience distress tolerance skills in the context of dialectical behavioral therapy? A qualitative study. <em>BMC Psychiatry.</em> pmc.ncbi.nlm.nih.gov/articles/PMC8205175/</li>
+    <li>International Society for the Study of Personality Disorders. (2024). isspd.net</li>
+    <li>Linehan, M. M. (1993). <em>Cognitive-Behavioral Treatment of Borderline Personality Disorder.</em> Guilford Press.</li>
+    <li>L&ouml;ffler, A., et al. (2018). Evidence-based psychodynamic therapies for the treatment of patients with borderline personality disorder. <em>Clinical Psychology in Europe.</em> doi.org/10.32872/cpe.v1i2.30639</li>
+    <li>Meuldijk, D., et al. (2018). PRO*BPD: effectiveness of outpatient treatment programs for borderline personality disorder. <em>BMC Psychiatry.</em> doi.org/10.1186/s12888-018-1905-6</li>
+    <li>National Education Alliance for Borderline Personality Disorder. (2024). borderlinepersonalitydisorder.org</li>
+    <li>Substance Abuse and Mental Health Services Administration. (2024). <em>988 Suicide &amp; Crisis Lifeline.</em> samhsa.gov/find-help/988</li>
+    <li>The Trevor Project. (2024). thetrevorproject.org</li>
+    <li>Vasiljevic, M., et al. (2025). Feasibility and efficacy of brief DBT intervention for adults with borderline personality disorder or traits: a systematic review. pmc.ncbi.nlm.nih.gov/articles/PMC12409768/</li>
+    <li>Zainal, N. H., et al. (2021). Implementation of brief dialectical behavior therapy skills training among borderline personality disorder patients in Malaysia. <em>BMC Psychiatry.</em> pmc.ncbi.nlm.nih.gov/articles/PMC8489091/</li>
+  </ol>
+  <p class="note">Crisis numbers were verified as current at the time of writing. If you are reading a printed copy some time from now, confirm them before relying on them.</p>
+</section>
+</body></html>

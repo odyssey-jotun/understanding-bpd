@@ -26,7 +26,13 @@ All three are in `downloads/` and live on the site. Direct links:
 | 2. So You (Think) You Have BPD? | `downloads/bpd_patient_guide_v6.pdf` | https://odyssey-jotun.github.io/understanding-bpd/downloads/bpd_patient_guide_v6.pdf |
 | 3. So Someone You Love (Might Have) BPD? | `downloads/bpd_loved_ones_guide_v2.pdf` | https://odyssey-jotun.github.io/understanding-bpd/downloads/bpd_loved_ones_guide_v2.pdf |
 
-Six pages each (seven for guide two), around 650KB, US Letter.
+Guide three is now twelve pages (expanded 2026-09-23). Guides one and two are six and
+seven pages and have not been expanded yet. US Letter, 650KB to 1MB.
+
+Guide three carries the components the other two do not have yet: `.ladder` (the six
+levels of validation), `.script` (instead-of/try dialogue cards), `.flow` (the ordered
+decision steps), `.check` (the caregiver self-check) and `.twocol` panels. They all live
+in `guide-src/css.py` and are ready to reuse in the other two guides.
 
 ### How they are built
 

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Overview, Characteristics, and Causes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: letter; margin: 0.85in 0.8in 0.75in 0.8in; }
+@page fullbleed { margin: 0; }
+:root{
+  --bg:#F7F4EF; --bg-alt:#EBE6DC; --card:#FFFFFF;
+  --ink:#1F2233; --ink-soft:#4A4F66;
+  --primary:#2A3352; --primary-dk:#161B2E;
+  --accent:#A8432A; --on-dark:#F2EFE9; --on-dark-soft:#C9CBD8;
+  --accent-dark-bg:#E9A18A; --line:rgba(31,34,51,0.16);
+}
+*{ box-sizing:border-box; }
+/* Body pages print on white. Chromium never paints the @page margin box,
+   so a tinted body would show as a colour block floating on white paper.
+   The brand carries on these pages through type, rules and callouts; the
+   full-bleed cover and About page supply the colour. */
+html{ background:#FFFFFF; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family:'Karla',system-ui,sans-serif;
+  color:var(--ink); background:#FFFFFF;
+  font-size:10.6pt; line-height:1.62;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+h1,h2,h3,.display{ font-family:'Fraunces',Georgia,serif; font-weight:600; color:var(--primary); }
+p{ margin:0 0 9pt; }
+strong{ font-weight:700; color:var(--ink); }
+
+/* ---------- full-bleed cover ---------- */
+.cover{ page:fullbleed; break-after:page; width:8.5in; height:11in;
+  background:var(--primary-dk); color:var(--on-dark);
+  display:flex; flex-direction:column; overflow:hidden; }
+.cover-top{ padding:0.78in 0.8in 0.34in; }
+.cover .wordmark{ font-family:'Fraunces',serif; font-size:13pt; font-weight:600;
+  color:var(--on-dark); letter-spacing:.01em; margin:0 0 0.42in; }
+.cover .wordmark em{ font-style:normal; color:var(--accent-dark-bg); }
+.cover .kicker{ font-family:'Karla',sans-serif; font-size:8.6pt; font-weight:700;
+  letter-spacing:.17em; text-transform:uppercase; color:var(--accent-dark-bg); margin:0 0 11pt; }
+.cover h1{ color:var(--on-dark); font-size:33pt; line-height:1.1; margin:0 0 12pt; letter-spacing:-0.01em; }
+.cover .sub{ color:var(--on-dark-soft); font-size:11.6pt; line-height:1.5; margin:0; max-width:5.5in; }
+.cover-img{ flex:1; position:relative; overflow:hidden; }
+.cover-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+.cover-foot{ padding:0.24in 0.8in 0.5in; display:flex; justify-content:space-between;
+  align-items:baseline; border-top:1px solid rgba(242,239,233,0.16); }
+.cover-foot .by{ font-size:10pt; color:var(--on-dark); font-weight:600; }
+.cover-foot .site{ font-size:8.6pt; color:var(--on-dark-soft); letter-spacing:.05em; }
+
+/* ---------- body ---------- */
+.kicker{ font-family:'Karla',sans-serif; font-size:8.2pt; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:0 0 5pt;
+  break-after:avoid-page; }
+h2{ font-size:16.5pt; line-height:1.2; margin:0 0 7pt; break-after:avoid-page; }
+h3{ font-size:11.4pt; line-height:1.3; margin:13pt 0 4pt; color:var(--primary); break-after:avoid-page; }
+section.block{ margin-bottom:17pt; break-inside:avoid-page; }
+section.block.loose{ break-inside:auto; }
+.rule{ height:2.5pt; width:42pt; background:var(--accent); border-radius:2pt; margin:0 0 10pt;
+  break-after:avoid-page; }
+
+ul,ol{ margin:0 0 9pt; padding-left:15pt; }
+li{ margin-bottom:5pt; }
+li::marker{ color:var(--accent); }
+ol.crit{ padding-left:0; list-style:none; counter-reset:c; }
+ol.crit li{ counter-increment:c; position:relative; padding-left:24pt; margin-bottom:6pt; }
+ol.crit li::before{ content:counter(c); position:absolute; left:0; top:0.5pt;
+  width:16pt; height:16pt; border-radius:50%; background:var(--primary); color:var(--on-dark);
+  font-family:'Fraunces',serif; font-size:8.4pt; font-weight:600;
+  display:flex; align-items:center; justify-content:center; }
+
+.callout{ background:var(--bg-alt); border-left:3pt solid var(--accent);
+  padding:11pt 14pt; border-radius:0 8pt 8pt 0; margin:0 0 12pt; break-inside:avoid-page; }
+.callout p:last-child{ margin-bottom:0; }
+.callout .lead{ font-family:'Fraunces',serif; font-size:11.4pt; color:var(--primary); font-weight:600; margin-bottom:5pt; }
+
+.crisis{ background:var(--primary-dk); color:var(--on-dark); border-radius:10pt;
+  padding:14pt 16pt; margin:2pt 0 12pt; break-inside:avoid-page; }
+.crisis h3{ color:var(--on-dark); margin:0 0 7pt; font-size:12pt; }
+.crisis p, .crisis li{ color:var(--on-dark-soft); }
+.crisis ul{ margin:0; padding-left:13pt; }
+.crisis li::marker{ color:var(--accent-dark-bg); }
+.crisis strong{ color:var(--on-dark); }
+
+figure{ margin:12pt 0; break-inside:avoid-page; }
+figure img{ width:100%; display:block; border-radius:10pt; object-fit:cover; }
+figure.wide img{ height:1.85in; }
+figure.tall{ width:3.4in; margin-left:auto; margin-right:auto; }
+figure.tall img{ height:3.4in; }
+figure.tall figcaption{ text-align:center; }
+figcaption{ font-size:8.4pt; color:var(--ink-soft); margin-top:5pt; font-style:italic; }
+
+/* ---------- about page ---------- */
+.about{ page:fullbleed; break-before:page; break-after:page;
+  width:8.5in; height:11in; background:var(--bg-alt); overflow:hidden;
+  display:flex; flex-direction:column; }
+.about-inner{ flex:1; padding:0.9in 0.8in 0.4in; display:flex; flex-direction:column; }
+.about-head{ margin-bottom:0.34in; }
+.about-head h2{ font-size:27pt; margin:0; }
+.about-grid{ display:flex; gap:0.42in; align-items:flex-start; }
+.about-photo{ width:2.5in; flex:none; border-radius:12pt; overflow:hidden;
+  box-shadow:0 14pt 30pt -14pt rgba(31,34,51,0.5); }
+.about-photo img{ width:100%; height:3.75in; object-fit:cover; display:block; }
+.about-body{ flex:1; }
+.about-body .name-line{ font-family:'Fraunces',serif; font-size:13pt; line-height:1.36;
+  color:var(--primary); font-weight:600; margin-bottom:9pt; }
+.about-body p{ font-size:10.6pt; }
+.about-quote{ margin-top:0.34in; padding-top:0.26in; border-top:1px solid var(--line); }
+.about-quote p{ font-family:'Fraunces',serif; font-size:12.4pt; line-height:1.48;
+  color:var(--primary); margin:0; }
+.about-foot{ background:var(--primary-dk); color:var(--on-dark-soft);
+  padding:0.28in 0.8in; font-size:9pt; display:flex; justify-content:space-between; align-items:baseline; }
+.about-foot .mark{ font-family:'Fraunces',serif; color:var(--on-dark); font-size:11pt; font-weight:600; }
+.about-foot .mark em{ font-style:normal; color:var(--accent-dark-bg); }
+
+/* ---------- works cited ---------- */
+.refs{ break-before:page; }
+.refs h2{ font-size:15pt; }
+.refs ol{ padding-left:14pt; }
+.refs li{ font-size:8.9pt; line-height:1.5; color:var(--ink-soft); margin-bottom:6pt; }
+.refs li::marker{ color:var(--accent); font-weight:700; }
+.refs a{ color:var(--ink-soft); word-break:break-all; text-decoration:none; }
+.note{ font-size:8.6pt; color:var(--ink-soft); font-style:italic; margin-top:12pt;
+  padding-top:8pt; border-top:1px solid var(--line); }
+
+/* ---------- expansion components ---------- */
+.lede{ font-family:'Fraunces',Georgia,serif; font-size:12.6pt; line-height:1.5;
+  color:var(--primary); margin:0 0 12pt; }
+
+.twocol{ display:flex; gap:16pt; margin:0 0 12pt; break-inside:avoid-page; }
+.twocol > div{ flex:1; }
+.panel{ background:var(--bg-alt); border-radius:9pt; padding:11pt 13pt; }
+.panel h4{ font-family:'Fraunces',serif; font-size:10.6pt; color:var(--primary);
+  margin:0 0 5pt; font-weight:600; }
+.panel ul{ margin:0; padding-left:12pt; }
+.panel li{ font-size:9.8pt; margin-bottom:3.5pt; }
+
+/* instead-of / try script cards */
+.script{ border:1px solid var(--line); border-radius:9pt; padding:11pt 13pt;
+  margin:0 0 10pt; break-inside:avoid-page; }
+.script .sit{ font-family:'Fraunces',serif; font-size:10.8pt; font-weight:600;
+  color:var(--primary); margin:0 0 7pt; }
+.script .line{ padding-left:11pt; margin:0 0 6pt; border-left:2.5pt solid var(--line); }
+.script .line:last-child{ margin-bottom:0; }
+.script .no{ border-left-color:var(--accent); }
+.script .yes{ border-left-color:var(--primary); }
+.script .tag{ font-family:'Karla',sans-serif; font-size:7.6pt; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; display:block; margin-bottom:2pt; }
+.script .no .tag{ color:var(--accent); }
+.script .yes .tag{ color:var(--primary); }
+.script .say{ font-size:10pt; line-height:1.5; margin:0; }
+.script .yes .say{ font-weight:500; }
+.script .why{ font-size:8.8pt; color:var(--ink-soft); font-style:italic; margin:5pt 0 0; }
+
+/* numbered ladder */
+.ladder{ counter-reset:rung; margin:0 0 12pt; }
+.rung{ counter-increment:rung; position:relative; padding-left:30pt;
+  padding-bottom:11pt; break-inside:avoid-page; }
+.rung::before{ content:counter(rung); position:absolute; left:0; top:0;
+  width:19pt; height:19pt; border-radius:50%; background:var(--primary);
+  color:var(--on-dark); font-family:'Fraunces',serif; font-size:9.4pt; font-weight:600;
+  display:flex; align-items:center; justify-content:center; }
+.rung::after{ content:''; position:absolute; left:9pt; top:19pt; bottom:0;
+  width:1px; background:var(--line); }
+.rung:last-child{ padding-bottom:0; }
+.rung:last-child::after{ display:none; }
+.rung h4{ font-family:'Fraunces',serif; font-size:10.8pt; color:var(--primary);
+  margin:1pt 0 3pt; font-weight:600; }
+.rung p{ font-size:9.9pt; margin:0 0 3pt; }
+.rung .say{ font-size:9.9pt; color:var(--primary); font-style:italic;
+  background:var(--bg-alt); padding:5pt 9pt; border-radius:6pt; margin:4pt 0 0; }
+
+/* decision flow */
+.flow{ margin:0 0 12pt; }
+.pair{ break-inside:avoid-page; margin-bottom:5pt; }
+.pair .step{ margin-bottom:5pt; }
+.step{ border-radius:9pt; padding:9pt 12pt; margin:0 0 5pt; break-inside:avoid-page; }
+.step.q{ background:var(--primary); color:var(--on-dark); }
+.step.q p{ color:var(--on-dark); margin:0; font-weight:600; font-size:10.2pt; }
+.step.a{ background:var(--bg-alt); margin-left:22pt; }
+.step.a p{ margin:0; font-size:9.9pt; }
+.step.a .label{ font-family:'Karla',sans-serif; font-size:7.6pt; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--accent); display:block;
+  margin-bottom:2pt; }
+.step.stop{ background:var(--accent); color:#FFF; margin-left:22pt; }
+.step.stop p, .step.stop .label{ color:#FFF; }
+
+/* self-check list */
+.check{ margin:0 0 10pt; padding:0; list-style:none; }
+.check li{ position:relative; padding-left:20pt; margin-bottom:6pt; font-size:10pt;
+  break-inside:avoid-page; }
+.check li::before{ content:''; position:absolute; left:0; top:1.5pt;
+  width:11pt; height:11pt; border:1.4pt solid var(--primary); border-radius:2.5pt; }
+
+</style></head><body>
+
+<div class="cover">
+  <div class="cover-top">
+    <p class="wordmark">Understanding <em>BPD</em></p>
+    <p class="kicker">Guide one of three</p>
+    <h1>Overview, Characteristics, and Causes</h1>
+    <p class="sub">What borderline personality disorder is, how it is diagnosed, and what the research says about where it comes from.</p>
+  </div>
+  <div class="cover-img"><img src="img/2.jpg" alt=""></div>
+  <div class="cover-foot">
+    <span class="by">Marley Spraggins</span>
+    <span class="site">odyssey-jotun.github.io/understanding-bpd</span>
+  </div>
+</div>
+<section class="block">
+  <p class="kicker">Section one</p>
+  <h2>What borderline personality disorder is</h2>
+  <div class="rule"></div>
+  <p>Borderline Personality Disorder (BPD) is a complex psychiatric condition primarily
+  characterized by pervasive instability in emotion regulation, interpersonal relationships,
+  self-image, and impulse control. Historically, the term was coined by Adolf Stern in 1938 to
+  describe individuals who occupied a &ldquo;borderline group of neuroses&rdquo; between
+  neurotic and psychotic classifications. It was formally included in the Diagnostic and
+  Statistical Manual of Mental Disorders (DSM-III) in 1980.</p>
+  <p>BPD is recognized as a developmental disorder whose symptoms typically begin to manifest
+  during adolescence or early adulthood. It represents a core dysfunction of the emotion
+  regulation system, often conceptualized as experiencing emotions with heightened intensity,
+  heightened sensitivity, and a slow return to emotional baseline.</p>
+</section>
+
+<figure class="wide">
+  <img src="img/1.jpg" alt="A frowning face and a smiling face drawn on sticky notes, surrounded by crumpled paper">
+  <figcaption>The shift is in intensity and recovery time, not in who someone is.</figcaption>
+</figure>
+
+<section class="block loose">
+  <p class="kicker">Section two</p>
+  <h2>Characteristics and features</h2>
+  <div class="rule"></div>
+  <h3>DSM-5-TR diagnostic criteria</h3>
+  <p>According to the DSM-5-TR, a diagnosis of BPD requires a pervasive pattern of instability
+  in interpersonal relationships, self-image, and affects, along with marked impulsivity,
+  indicated by <strong>at least five</strong> of the following nine criteria.</p>
+  <ol class="crit">
+    <li>Frantic efforts to avoid real or imagined abandonment.</li>
+    <li>A pattern of unstable and intense interpersonal relationships characterized by
+    alternating between extremes of idealization and devaluation.</li>
+    <li>Identity disturbance: markedly and persistently unstable self-image or sense of self.</li>
+    <li>Impulsivity in at least two areas that are potentially self-damaging, such as spending,
+    sex, substance abuse, reckless driving, or binge eating.</li>
+    <li>Recurrent suicidal behavior, gestures, or threats, or self-mutilating behavior.</li>
+    <li>Affective instability due to a marked reactivity of mood, such as intense episodic
+    dysphoria, irritability, or anxiety usually lasting a few hours and rarely more than a few days.</li>
+    <li>Chronic feelings of emptiness.</li>
+    <li>Inappropriate, intense anger or difficulty controlling anger, such as frequent displays
+    of temper, constant anger, or recurrent physical fights.</li>
+    <li>Transient, stress-related paranoid ideation or severe dissociative symptoms.</li>
+  </ol>
+
+  <h3>The ICD-11 borderline pattern</h3>
+  <p>The International Classification of Diseases (ICD-11) describes the &ldquo;borderline
+  pattern&rdquo; descriptor as a pervasive pattern of instability in relationships, self-image,
+  affects, and marked impulsivity, incorporating features such as emotional reactivity, chronic
+  emptiness, recurrent self-harm, and transient dissociative or psychotic-like features during
+  states of high affective arousal.</p>
+</section>
+
+<section class="block loose">
+  <h3>Core behavioral and psychological patterns</h3>
+  <ul>
+    <li><strong>Emotional dysregulation.</strong> Heightened reactivity, profound emotional
+    storms, and difficulty returning to an emotional baseline. Individuals often report feeling
+    as though they have &ldquo;no emotional skin.&rdquo;</li>
+    <li><strong>Interpersonal dysregulation.</strong> Intense, unstable relationships, severe
+    rejection sensitivity, and extreme fears of abandonment.</li>
+    <li><strong>Behavioral dysregulation.</strong> Risky impulsivity, non-suicidal self-injury,
+    and elevated rates of suicidal gestures or attempts.</li>
+    <li><strong>Cognitive and self-dysregulation.</strong> Impaired mentalizing, meaning
+    difficulty inferring and understanding one's own and others' mental states, alongside
+    automatic non-reflective thinking, an unstable sense of self, and persistent emptiness.</li>
+    <li><strong>Parenting and relational dynamics.</strong> Parents with BPD traits may struggle
+    with containing emotional responses, deploying intense control or over-planning to cope, and
+    at times inadvertently expecting caregiving or emotional support from their children.</li>
+  </ul>
+</section>
+
+<section class="block loose">
+  <p class="kicker">Section three</p>
+  <h2>Where it comes from</h2>
+  <div class="rule"></div>
+  <p>BPD develops through a complex, transactional biosocial process involving biological
+  vulnerabilities, neurobiological mechanisms, and environmental factors interacting over time.
+  No single cause has been identified, and no single cause is expected.</p>
+
+  <h3>Biological and neurobiological factors</h3>
+  <ul>
+    <li><strong>Genetic endophenotypes.</strong> While a single genetic anomaly has not been
+    pinpointed, genetic influences are evident. Polymorphisms in the tryptophan hydroxylase
+    (TPH) gene have been linked to impulsive aggression and suicidal behavior in BPD.</li>
+    <li><strong>Neuroendocrine dysregulation.</strong> Dysfunctions in the
+    hypothalamic-pituitary-adrenal (HPA) axis lead to chronic hyperarousal and altered cortisol
+    levels during stress.</li>
+    <li><strong>Brain structural and functional alterations.</strong> Neuroimaging reveals
+    hyperactivity in the amygdala and hippocampus during emotional processing, paired with
+    deficits in habituation to negative stimuli and reduced top-down prefrontal control.</li>
+  </ul>
+
+  <h3>Environmental and psychosocial factors</h3>
+  <ul>
+    <li><strong>Invalidating environments.</strong> Linehan's biosocial model emphasizes that an
+    invalidating childhood environment, where emotional expressions are dismissed, trivialized,
+    or punished, interacts reciprocally with biological emotional vulnerability to drive core
+    BPD symptoms.</li>
+    <li><strong>Adverse childhood experiences.</strong> Severe early trauma, including childhood
+    physical, emotional, or sexual abuse, neglect, and parental mental illness, is a strong
+    predictor for BPD development.</li>
+    <li><strong>Familial and peer disruption.</strong> Dysfunctional family dynamics, such as
+    guilt induction, psychological control, and parental marital conflict triangulation, along
+    with severe peer victimization or bullying, significantly increase the risk of early-onset
+    BPD traits.</li>
+  </ul>
+
+  <div class="callout">
+    <p class="lead">A vulnerability is not a verdict.</p>
+    <p>The biosocial model describes an interaction, not a sentence. The same research that
+    identifies these risk factors is the research that established BPD as one of the more
+    treatable conditions in the manual. The next guide in this series covers what treatment
+    actually looks like.</p>
+  </div>
+</section>
+
+<div class="about">
+  <div class="about-inner">
+    <div class="about-head">
+      <p class="kicker">About the guide</p>
+      <h2>Meet Marley</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="img/marley.jpg" alt="Marley Spraggins, standing outdoors at golden hour, smiling">
+      </div>
+      <div class="about-body">
+        <p class="name-line">This project started with one family trying to make sense of a diagnosis.</p>
+        <p>Marley grew up inside a family where emotions ran high and nobody had a word for why.
+        That question led her to spend a summer buried in clinical research on borderline
+        personality disorder, and to build this series of guides for other families doing the
+        same thing hers did.</p>
+        <p>Each guide is written from the peer-reviewed literature rather than from anecdote,
+        and every claim is traceable to the sources listed at the back. They are free, and they
+        are meant to be shared with the people who need them.</p>
+      </div>
+    </div>
+    <div class="about-quote">
+      <p>&ldquo;Nobody in my family had the language for what was happening. These guides are
+      the thing I wish someone had handed us.&rdquo;</p>
+    </div>
+  </div>
+  <div class="about-foot">
+    <span class="mark">Understanding <em>BPD</em></span>
+    <span>All three guides are free at odyssey-jotun.github.io/understanding-bpd</span>
+  </div>
+</div>
+
+<section class="refs">
+  <p class="kicker">Sources</p>
+  <h2>Works cited</h2>
+  <div class="rule"></div>
+  <ol>
+    <li>Australian BPD Foundation. (n.d.). <em>Diagnostic criteria for Borderline Personality Disorder.</em> bpdfoundation.org.au/diagnostic-criteria.php</li>
+    <li>Clarkin, J. F., Caligor, E., &amp; Sowislo, J. F. (2020). An object relations model perspective on the alternative model for personality disorders (DSM-5). <em>Psychoanalytic Psychology.</em> pmc.ncbi.nlm.nih.gov/articles/PMC7949219/</li>
+    <li>Fonagy, P., &amp; Luyten, P. (2016). What we have changed our minds about: Part 1. Borderline personality disorder as a limitation of resilience. <em>Borderline Personality Disorder and Emotion Dysregulation.</em> pmc.ncbi.nlm.nih.gov/articles/PMC5389119/</li>
+    <li>Linehan, M. M. (1993). <em>Cognitive-Behavioral Treatment of Borderline Personality Disorder.</em> Guilford Press. books.google.com/books?id=UZim3OAPwe8C</li>
+    <li>Oltmanns, T. F., &amp; Martin, M. T. (2019). <em>Case Studies in Abnormal Psychology.</em> SAGE Publications.</li>
+    <li>Sharp, C., et al. (2023). Mentalizing in adolescents with borderline personality disorder. <em>Brain Sciences.</em> pmc.ncbi.nlm.nih.gov/articles/PMC10605837/</li>
+    <li>Spitzer, C., et al. (2021). The role of trauma in early onset borderline personality disorder: a biopsychosocial perspective. <em>Frontiers in Psychiatry.</em> pmc.ncbi.nlm.nih.gov/articles/PMC8495240/</li>
+    <li>Spitzer, C., et al. (2023). Borderline personality disorder: a comprehensive review of diagnosis and clinical presentation, etiology, treatment, and current controversies. <em>World Psychiatry.</em> pmc.ncbi.nlm.nih.gov/articles/PMC10786009/</li>
+    <li>The parenting experience of those with borderline personality disorder traits: practitioner and parent perspectives. (2020). <em>Frontiers in Psychology.</em> frontiersin.org/articles/10.3389/fpsyg.2020.01913/full</li>
+    <li>Validating the biosocial model of borderline personality disorder: findings from a longitudinal study. (2020). <em>Development and Psychopathology.</em> cambridge.org/core/journals/development-and-psychopathology</li>
+  </ol>
+  <p class="note">Entries 9 and 10 are listed by title because the source material did not carry a named author. Confirm the author line against the publisher before citing either one directly.</p>
+</section>
+</body></html>
