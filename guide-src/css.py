@@ -227,7 +227,7 @@ figure.diagram figcaption{ font-size:8.4pt; color:var(--ink-soft); font-style:it
 .check.tight li{ margin-bottom:4pt; }
 .side .text{ flex:1; }
 .side .text p:last-child{ margin-bottom:0; }
-ol.crit.traits li{ margin-bottom:3.5pt; font-size:10.2pt; }
+ol.crit.traits li{ margin-bottom:2.5pt; font-size:9.9pt; line-height:1.45; }
 .cols2{ columns:2; column-gap:18pt; margin:0 0 10pt; }
 .cols2 li{ break-inside:avoid; }
 .refs.tight li{ font-size:8.6pt; line-height:1.42; margin-bottom:4pt; }

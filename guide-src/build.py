@@ -37,8 +37,15 @@ ABOUT_T = """
 </div>
 """
 
-def about(kicker='<p class="kicker">About the guide</p>', foot="All three guides are free at"):
-    return ABOUT_T % {"kicker": kicker, "foot": foot, "site": SITE}
+def about(kicker='<p class="kicker">About the guide</p>', foot="All three guides are free at",
+          body=None):
+    html = ABOUT_T % {"kicker": kicker, "foot": foot, "site": SITE}
+    if body:
+        # Swap the third-person bio for one the author wrote in her own voice.
+        start = html.index('<h2>Meet Marley</h2>')
+        end = html.index('</div>\n  </div>\n  <div class="about-foot">')
+        html = html[:start] + body.strip() + "\n    " + html[end:]
+    return html
 
 ABOUT = about()
 

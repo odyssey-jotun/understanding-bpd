@@ -11,7 +11,7 @@ for name,g in OUT:
 # Guide four follows the newer house rules: no small-caps eyebrows anywhere.
 name = "bpd_guide_for_teens"
 body = (cover("", g4.TITLE, g4.SUB, g4.IMG) + g4.BODY
-        + about(kicker="", foot="Every guide in the series is free at")
+        + about(kicker="", foot="Every guide in the series is free at", body=g4.ABOUT_BODY)
         + refs(g4.REFS, g4.NOTE, kicker=None, cls="tight"))
 io.open(os.path.join(D,name+".html"),"w",encoding="utf-8").write(page(g4.TITLE,body))
 print("wrote",name+".html")
