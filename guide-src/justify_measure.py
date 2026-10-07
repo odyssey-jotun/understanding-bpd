@@ -53,7 +53,8 @@ def last_ink(pdf):
         rows.append(y / DPI * PT_PER_IN)          # px -> points
     return rows
 
-def main(pdf, blocks_path, out_path):
+def main(pdf, blocks_path, out_path, skip_pages=0):
+    skip_pages = int(skip_pages)
     blocks = json.load(open(blocks_path))
     for b in blocks:
         b['n'] = squash(norm(b['text']))
@@ -63,17 +64,35 @@ def main(pdf, blocks_path, out_path):
     # Find the first flow block on each page by matching its opening words.
     starts, cursor = {}, 0
     for pi, pg in enumerate(pages):
-        words = [squash(norm(w)) for w, _ in pg['words'][:8] if squash(norm(w))]
+        if pi < skip_pages:
+            continue
+        words = [squash(norm(w)) for w, _ in pg['words'][:10] if squash(norm(w))]
         if not words:
             continue
-        for take in (6, 5, 4, 3):
+        # A page starts at the top of a block, so try a PREFIX match first and
+        # from longest to shortest. Substring matching alone lost pages that open
+        # with a short block such as a two-word eyebrow ("Section Six"), because
+        # no 3-word needle could ever be contained in it.
+        hit = None
+        for take in (8, 7, 6, 5, 4, 3, 2):
             needle = ' '.join(words[:take])
-            if len(needle) < 8:
+            if len(needle) < 6:
                 continue
             hit = next((i for i in range(cursor, len(blocks))
-                        if needle in blocks[i]['n']), None)
+                        if blocks[i]['n'].startswith(needle)), None)
             if hit is not None:
-                starts[pi] = hit; cursor = hit; break
+                break
+        if hit is None:
+            for take in (6, 5, 4, 3):
+                needle = ' '.join(words[:take])
+                if len(needle) < 8:
+                    continue
+                hit = next((i for i in range(cursor, len(blocks))
+                            if needle in blocks[i]['n']), None)
+                if hit is not None:
+                    break
+        if hit is not None:
+            starts[pi] = hit; cursor = hit
 
     # Turn page starts into page -> block ranges.
     ordered = sorted(starts.items())
@@ -119,4 +138,4 @@ def main(pdf, blocks_path, out_path):
             print(f"   page {r['page']:>2}: {r['slack']:>4}px slack, no eligible gap")
 
 if __name__ == '__main__':
-    main(*sys.argv[1:4])
+    main(*sys.argv[1:5])

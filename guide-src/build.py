@@ -5,14 +5,14 @@ from css import CSS
 
 SITE = "odyssey-jotun.github.io/understanding-bpd"
 
-ABOUT = """
+ABOUT_T = """
 <div class="about">
   <div class="about-inner">
     <div class="about-photo">
       <img src="img/marley.jpg" alt="Marley Spraggins, standing outdoors at golden hour, smiling">
     </div>
     <div class="about-body">
-      <p class="kicker">About the guide</p>
+      %(kicker)s
       <h2>Meet Marley</h2>
       <div class="rule"></div>
       <p class="name-line">This project started with one family trying to make sense of a
@@ -32,17 +32,22 @@ ABOUT = """
   </div>
   <div class="about-foot">
     <span class="mark">Understanding <em>BPD</em></span>
-    <span>All three guides are free at %s</span>
+    <span>%(foot)s %(site)s</span>
   </div>
 </div>
-""" % SITE
+"""
+
+def about(kicker='<p class="kicker">About the guide</p>', foot="All three guides are free at"):
+    return ABOUT_T % {"kicker": kicker, "foot": foot, "site": SITE}
+
+ABOUT = about()
 
 def cover(kicker, title, sub, img):
     return """
 <div class="cover">
   <div class="cover-top">
     <p class="wordmark">Understanding <em>BPD</em></p>
-    <p class="kicker">%s</p>
+    %s
     <h1>%s</h1>
     <p class="sub">%s</p>
   </div>
@@ -51,20 +56,20 @@ def cover(kicker, title, sub, img):
     <span class="by">Marley Spraggins</span>
     <span class="site">%s</span>
   </div>
-</div>""" % (kicker, title, sub, img, SITE)
+</div>""" % (('<p class="kicker">%s</p>' % kicker) if kicker else '', title, sub, img, SITE)
 
-def refs(items, note):
+def refs(items, note, kicker="Sources", cls=""):
     lis = "\n".join("    <li>%s</li>" % i for i in items)
     return """
-<section class="refs">
-  <p class="kicker">Sources</p>
+<section class="refs%s">
+  %s
   <h2>Works cited</h2>
   <div class="rule"></div>
   <ol>
 %s
   </ol>
   <p class="note">%s</p>
-</section>""" % (lis, note)
+</section>""" % ((" " + cls) if cls else "", ('<p class="kicker">%s</p>' % kicker) if kicker else '', lis, note)
 
 def page(title, body):
     return """<!DOCTYPE html>

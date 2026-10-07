@@ -25,7 +25,7 @@ import { tmpdir } from 'os';
 
 const D = dirname(fileURLToPath(import.meta.url));
 const OUT = join(D, '..', 'downloads');
-const GUIDES = ['BPD_Overview', 'bpd_patient_guide_v6', 'bpd_loved_ones_guide_v2'];
+const GUIDES = process.argv.slice(2).length ? process.argv.slice(2) : ['BPD_Overview', 'bpd_patient_guide_v6', 'bpd_loved_ones_guide_v2', 'bpd_guide_for_teens'];
 const work = mkdtempSync(join(tmpdir(), 'justify-'));
 
 const browser = await chromium.launch();
@@ -72,7 +72,7 @@ for (const name of GUIDES) {
   writeFileSync(bjson, JSON.stringify(blocks));
 
   console.log(`${name}:`);
-  const log = execFileSync('python3', [join(D, 'justify_measure.py'), probe, bjson, gjson],
+  const log = execFileSync('python3', [join(D, 'justify_measure.py'), probe, bjson, gjson, '1'],
                            { encoding: 'utf8' });
   process.stdout.write(log);
 
